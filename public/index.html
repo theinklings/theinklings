@@ -1,448 +1,536 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="The Inklings - A welcoming space where your creativity can run wild. We imagine, build, and grow together." name="description"/>
-<title data-i18n="pageTitle" data-i18n-title="pageTitle">The Inklings | Creative Collective</title>
-<link href="style.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
-<script defer="" src="i18n.js"></script><script defer="" src="app.js"></script><script defer="" src="constellation.js"></script>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="The Inklings - A welcoming space where your creativity can run wild. We imagine, build, and grow together."
+                name="description" />
+        <title data-i18n="pageTitle" data-i18n-title="pageTitle">The Inklings | Creative Collective</title>
+        <link href="style.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/i18next@23/dist/umd/i18next.min.js"></script>
+        <script defer="" src="i18n.js"></script>
+        <script defer="" src="app.js"></script>
+        <script defer="" src="constellation.js"></script>
 </head>
+
 <body>
-<!-- Custom Cursor Overlay -->
-<div class="custom-cursor" id="customCursor"></div>
-<!-- Header Navigation -->
-<header>
-<div class="container nav-container">
-<a class="logo-link" href="#" id="navLogoLink">
-<!-- SVG Nib & Droplet Logo -->
-<svg class="logo-svg" fill="none" viewbox="0 0 329 329" xmlns="http://www.w3.org/2000/svg">
-<path d="M89.0312 216.784L50.0156 294.818H128.049L145.14 329H0L72.5693 183.861L89.0312 216.784ZM181.59 294.818L164.499 329L147.408 294.818H181.59ZM329 329H183.858L200.949 294.818H278.987L239.968 216.781L256.43 183.858L329 329ZM115.173 164.5L98.7109 197.424L82.249 164.501L98.7109 131.577L115.173 164.5ZM246.749 164.498L230.288 197.421L213.826 164.498L230.287 131.574L246.749 164.498ZM190.249 51.4961L220.608 112.216L204.147 145.141L164.499 65.8457L124.854 145.136L108.393 112.214L138.753 51.4961H190.249ZM181.591 34.1807H147.41L164.501 0L181.591 34.1807Z" fill="currentColor"></path>
-<path d="M0.000153734 4.76837e-06L329 4.76837e-06L164.499 329L0.000153734 4.76837e-06ZM278.985 34.1818L50.0132 34.1818L164.501 263.154L278.985 34.1818Z" fill="currentColor"></path>
-</svg>
-<span class="logo-text" data-i18n="logoText">The Inklings</span>
-</a>
-<nav id="mainNav">
-<ul>
-<li><a class="nav-link" data-i18n="navManifesto" href="#about">Manifesto</a></li>
-<li><a class="nav-link" data-i18n="navPillars" href="#pillars">Pillars</a></li>
-<li><a class="nav-link" data-i18n="navShowcase" href="#showcase">Showcase</a></li>
-<li><a class="nav-link" data-i18n="navEvents" href="#events">Events</a></li>
-<li><a class="nav-link" data-i18n="navSector" href="#colonies">Sector</a></li>
-<li id="navJoinItem"><a class="nav-link" data-i18n="navJoin" href="#join">Join</a></li>
-</ul>
-</nav>
+        <!-- Custom Cursor Overlay -->
+        <div class="custom-cursor" id="customCursor"></div>
+        <!-- Header Navigation -->
+        <header>
+                <div class="container nav-container">
+                        <a class="logo-link" href="#" id="navLogoLink">
+                                <!-- SVG Nib & Droplet Logo -->
+                                <svg class="logo-svg" fill="none" viewbox="0 0 329 329"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M89.0312 216.784L50.0156 294.818H128.049L145.14 329H0L72.5693 183.861L89.0312 216.784ZM181.59 294.818L164.499 329L147.408 294.818H181.59ZM329 329H183.858L200.949 294.818H278.987L239.968 216.781L256.43 183.858L329 329ZM115.173 164.5L98.7109 197.424L82.249 164.501L98.7109 131.577L115.173 164.5ZM246.749 164.498L230.288 197.421L213.826 164.498L230.287 131.574L246.749 164.498ZM190.249 51.4961L220.608 112.216L204.147 145.141L164.499 65.8457L124.854 145.136L108.393 112.214L138.753 51.4961H190.249ZM181.591 34.1807H147.41L164.501 0L181.591 34.1807Z"
+                                                fill="currentColor"></path>
+                                        <path d="M0.000153734 4.76837e-06L329 4.76837e-06L164.499 329L0.000153734 4.76837e-06ZM278.985 34.1818L50.0132 34.1818L164.501 263.154L278.985 34.1818Z"
+                                                fill="currentColor"></path>
+                                </svg>
+                                <span class="logo-text" data-i18n="logoText">The Inklings</span>
+                        </a>
+                        <nav id="mainNav">
+                                <ul>
+                                        <li><a class="nav-link" data-i18n="navManifesto" href="#about">Manifesto</a>
+                                        </li>
+                                        <li><a class="nav-link" data-i18n="navPillars" href="#pillars">Pillars</a></li>
+                                        <li><a class="nav-link" data-i18n="navShowcase" href="#showcase">Showcase</a>
+                                        </li>
+                                        <li><a class="nav-link" data-i18n="navEvents" href="#events">Events</a></li>
+                                        <li><a class="nav-link" data-i18n="navSector" href="#colonies">Sector</a></li>
+                                        <li id="navJoinItem"><a class="nav-link" data-i18n="navJoin"
+                                                        href="#join">Join</a></li>
+                                </ul>
+                        </nav>
 
-<!-- Language Switcher -->
-<div class="lang-switcher" id="langSwitcher">
-<button aria-expanded="false" aria-haspopup="listbox" aria-label="Language" class="lang-btn" data-i18n-aria="langSwitcherAria" id="langBtn">
-<span id="langBtnLabel">EN</span>
-<svg aria-hidden="true" fill="none" height="8" viewbox="0 0 12 8" width="12"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<ul class="lang-dropdown" id="langDropdown" role="listbox">
-<li data-lang="en" role="option" tabindex="0">English</li>
-<li data-lang="th" role="option" tabindex="0">ภาษาไทย</li>
-<li data-lang="vi" role="option" tabindex="0">Tiếng Việt</li>
-<li data-lang="de" role="option" tabindex="0">Deutsch</li>
-<li data-lang="ms" role="option" tabindex="0">Bahasa Melayu</li>
-<li data-lang="ar" role="option" tabindex="0">العربية</li>
-<li data-lang="it" role="option" tabindex="0">Italiano</li>
-<li data-lang="ru" role="option" tabindex="0">Русский</li>
-<li data-lang="ja" role="option" tabindex="0">日本語</li>
-</ul>
-</div>
-<button aria-expanded="false" aria-label="Open menu" class="mobile-menu-btn" data-i18n-aria="mobileMenuAria" id="mobileMenuBtn">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
-</svg>
-</button>
-</header>
-<!-- Hero Section -->
-<section class="hero" id="hero">
-<div class="hero-grid-bg"></div>
+                        <!-- Language Switcher -->
+                        <div class="lang-switcher" id="langSwitcher">
+                                <button aria-expanded="false" aria-haspopup="listbox" aria-label="Language"
+                                        class="lang-btn" data-i18n-aria="langSwitcherAria" id="langBtn">
+                                        <span id="langBtnLabel">EN</span>
+                                        <svg aria-hidden="true" fill="none" height="8" viewbox="0 0 12 8" width="12">
+                                                <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-width="1.5"></path>
+                                        </svg>
+                                </button>
+                                <ul class="lang-dropdown" id="langDropdown" role="listbox">
+                                        <li data-lang="en" role="option" tabindex="0">English</li>
+                                        <li data-lang="th" role="option" tabindex="0">ภาษาไทย</li>
+                                        <li data-lang="vi" role="option" tabindex="0">Tiếng Việt</li>
+                                        <li data-lang="de" role="option" tabindex="0">Deutsch</li>
+                                        <li data-lang="ms" role="option" tabindex="0">Bahasa Melayu</li>
+                                        <li data-lang="ar" role="option" tabindex="0">العربية</li>
+                                        <li data-lang="it" role="option" tabindex="0">Italiano</li>
+                                        <li data-lang="ru" role="option" tabindex="0">Русский</li>
+                                        <li data-lang="ja" role="option" tabindex="0">日本語</li>
+                                </ul>
+                        </div>
+                        <button aria-expanded="false" aria-label="Open menu" class="mobile-menu-btn"
+                                data-i18n-aria="mobileMenuAria" id="mobileMenuBtn">
+                                <svg aria-hidden="true" viewbox="0 0 24 24">
+                                        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-linecap="round"
+                                                stroke-width="1.5"></path>
+                                </svg>
+                        </button>
+        </header>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+                <div class="hero-grid-bg"></div>
 
-<div class="hero-content">
-<span class="hero-tag" data-i18n="heroTag">A Creative Collective</span>
-<h1><span data-i18n="heroTitleStart">Where we </span><span class="hero-typing" id="heroTyping">imagine</span>.</h1>
-<p class="lead" data-i18n="heroLead">We are a welcoming space where your creativity can truly run wild. Organized, compact, and
-        relaxed.</p>
-<div class="hero-cta-group">
-<a class="btn btn-primary" data-i18n="heroCtaManifesto" href="#about">Read Manifesto</a>
-<a class="btn btn-secondary" data-i18n="heroCtaEvents" href="#events">Explore Events</a>
-</div>
-</div>
-<div class="scroll-down">
-<a aria-label="Scroll down" data-i18n-aria="scrollDownAria" href="#about">
-<svg viewbox="0 0 24 24">
-<path d="M12 5v14M5 12l7 7 7-7"></path>
-</svg>
-</a>
-</div>
-</section>
-<!-- Manifesto / About Section -->
-<section class="reveal" id="about">
-<div class="container manifesto-layout">
-<div class="manifesto-header">
-<span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
-<h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
-</div>
-<div class="manifesto-body">
-<p data-i18n="aboutP1">The Inklings is designed to be an organized, compact, and relaxed community of creators who are dedicated to helping others imagine, build, and grow.</p>
-<p data-i18n="aboutP2">Whether you are working on a massive project, launching a creative hobby or just want to share advice, we're here to hit the grind and create meaningful works, as well as helping you host your own creative events.</p>
-<p data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit alongside people who care about their craft.
-        </p>
-</div>
-</div>
-</section>
-<!-- Pillars Section -->
-<section class="reveal" id="pillars">
-<div class="container">
-<div class="pillars-header">
-<h2 data-i18n="pillarsHeading">Community Pillars</h2>
-<p data-i18n="pillarsSubheading">Three core activities that define what we do every single day as a community.</p>
-</div>
-<div class="pillars-grid">
-<!-- Pillar 1: Imagine -->
-<div class="pillar-card">
-<div class="pillar-icon-box">
-<svg viewbox="0 0 24 24">
-<path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
-</svg>
-</div>
-<h3 data-i18n="pillarImagine">Imagine</h3>
-<p data-i18n="pillarImagineDesc">Concept feedback, creative jams, storytelling review, and visual brainstorming. We push the boundaries of
-            what is possible, bringing raw sketches into logical frameworks.</p>
-<a class="pillar-link join-redirect" data-i18n="pillarImagineCta" href="#showcase">
-            Brainstorm Info
-            <svg viewbox="0 0 24 24">
-<path d="M5 12h14M12 5l7 7-7 7"></path>
-</svg>
-</a>
-</div>
-<!-- Pillar 2: Build -->
-<div class="pillar-card">
-<div class="pillar-icon-box">
-<svg viewbox="0 0 24 24">
-<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-</svg>
-</div>
-<h3 data-i18n="pillarBuild">Build</h3>
-<p data-i18n="pillarBuildDesc">This is where we hit the grind. Co-working sprints, code hacking sessions, collaborative design, and
-            project shipping. We build things that work, and help debug along the way.</p>
-<a class="pillar-link join-redirect" data-i18n="pillarBuildCta" href="#showcase">
-            Sprint With Us
-            <svg viewbox="0 0 24 24">
-<path d="M5 12h14M12 5l7 7-7 7"></path>
-</svg>
-</a>
-</div>
-<!-- Pillar 3: Grow -->
-<div class="pillar-card">
-<div class="pillar-icon-box">
-<svg viewbox="0 0 24 24">
-<path d="M12 20V10M18 20V4M6 20v-6"></path>
-</svg>
-</div>
-<h3 data-i18n="pillarGrow">Grow</h3>
-<p data-i18n="pillarGrowDesc">Reviewing shipped items, seeking mentorship, hosting workshops, and sharing advice. We support each other's
-            career progression and professional or artistic growth.</p>
-<a class="pillar-link join-redirect" data-i18n="pillarGrowCta" href="#showcase">
-            Share Advice
-            <svg viewbox="0 0 24 24">
-<path d="M5 12h14M12 5l7 7-7 7"></path>
-</svg>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Showcase Section -->
-<section class="reveal" id="showcase">
-<div class="container">
-<div class="showcase-header">
-<div>
-<span class="section-label" data-i18n="showcaseLabel">Creations Gallery</span>
-<h2 data-i18n="showcaseHeading">Inklings Showcase</h2>
-</div>
-<ul class="filter-nav">
-<li><button class="filter-btn active" data-filter="all" data-i18n="filterRecent">Recent Creations</button></li>
-<li><button class="filter-btn" data-filter="best" data-i18n="filterBest">Best Works</button></li>
-</ul>
-</div>
-<!-- Submit creation button - open to all -->
-<div class="showcase-submission-bar">
-<button class="btn btn-primary" data-i18n="submitCreationBtn" id="openSubmitModalBtn">Submit Your Creation</button>
-</div>
-<!-- Dynamic creations grid -->
-<div class="showcase-grid" id="showcaseGrid">
-<!-- Empty State (Shows initially) -->
-<div class="empty-showcase" id="emptyShowcase">
-<svg class="empty-icon" fill="none" stroke="currentColor" stroke-width="1" viewbox="0 0 24 24">
-<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-<polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-<line x1="12" x2="12" y1="22.08" y2="12"></line>
-</svg>
-<h3 data-i18n="emptyShowcaseTitle">The gallery is quiet</h3>
-<p data-i18n="emptyShowcaseText">Be the first to share what you are building.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Events Section -->
-<section class="reveal" id="events">
-<div class="container events-layout">
-<!-- Event Hosting Action & Description -->
-<div class="events-intro">
-<span class="section-label" data-i18n="eventsLabel">Get Involved</span>
-<h2 data-i18n="eventsHeading">Creative Events</h2>
-<p data-i18n="eventsLead">We host regular workspace events, feedback reviews, and co-working circles. Any Inkling can schedule and
-          launch their own creative events to collaborate on ideas.</p>
-<button class="btn btn-primary" data-i18n="hostEventBtn" id="openHostModalBtn">Host Your Own Event</button>
-</div>
-<!-- Events List Timeline -->
-<div class="events-timeline" id="eventsTimeline">
-<!-- Event 1 -->
+                <div class="hero-content">
+                        <span class="hero-tag" data-i18n="heroTag">A Creative Collective</span>
+                        <h1><span data-i18n="heroTitleStart">Where we </span><span class="hero-typing"
+                                        id="heroTyping">imagine</span>.</h1>
+                        <p class="lead" data-i18n="heroLead">We are a welcoming space where your creativity can truly
+                                run wild. Organized, compact, and
+                                relaxed.</p>
+                        <div class="hero-cta-group">
+                                <a class="btn btn-primary" data-i18n="heroCtaManifesto" href="#about">Read Manifesto</a>
+                                <a class="btn btn-secondary" data-i18n="heroCtaEvents" href="#events">Explore Events</a>
+                        </div>
+                </div>
+                <div class="scroll-down">
+                        <a aria-label="Scroll down" data-i18n-aria="scrollDownAria" href="#about">
+                                <svg viewbox="0 0 24 24">
+                                        <path d="M12 5v14M5 12l7 7 7-7"></path>
+                                </svg>
+                        </a>
+                </div>
+        </section>
+        <!-- Manifesto / About Section -->
+        <section class="reveal" id="about">
+                <div class="container manifesto-layout">
+                        <div class="manifesto-header">
+                                <span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
+                                <h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
+                        </div>
+                        <div class="manifesto-body">
+                                <p data-i18n="aboutP1">The Inklings is designed to be an organized, compact, and relaxed
+                                        community of creators who are dedicated to helping others imagine, build, and
+                                        grow.</p>
+                                <p data-i18n="aboutP2">Whether you are working on a massive project, launching a
+                                        creative hobby or just want to share advice, we're here to hit the grind and
+                                        create meaningful works, as well as helping you host your own creative events.
+                                </p>
+                                <p data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit
+                                        alongside people who care about their craft.
+                                </p>
+                        </div>
+                </div>
+        </section>
+        <!-- Pillars Section -->
+        <section class="reveal" id="pillars">
+                <div class="container">
+                        <div class="pillars-header">
+                                <h2 data-i18n="pillarsHeading">Community Pillars</h2>
+                                <p data-i18n="pillarsSubheading">Three core activities that define what we do every
+                                        single day as a community.</p>
+                        </div>
+                        <div class="pillars-grid">
+                                <!-- Pillar 1: Imagine -->
+                                <div class="pillar-card">
+                                        <div class="pillar-icon-box">
+                                                <svg viewbox="0 0 24 24">
+                                                        <path
+                                                                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83">
+                                                        </path>
+                                                </svg>
+                                        </div>
+                                        <h3 data-i18n="pillarImagine">Imagine</h3>
+                                        <p data-i18n="pillarImagineDesc">Concept feedback, creative jams, storytelling
+                                                review, and visual brainstorming. We push the boundaries of
+                                                what is possible, bringing raw sketches into logical frameworks.</p>
+                                        <a class="pillar-link join-redirect" data-i18n="pillarImagineCta"
+                                                href="#showcase">
+                                                Brainstorm Info
+                                                <svg viewbox="0 0 24 24">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                                </svg>
+                                        </a>
+                                </div>
+                                <!-- Pillar 2: Build -->
+                                <div class="pillar-card">
+                                        <div class="pillar-icon-box">
+                                                <svg viewbox="0 0 24 24">
+                                                        <path
+                                                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                                        </path>
+                                                </svg>
+                                        </div>
+                                        <h3 data-i18n="pillarBuild">Build</h3>
+                                        <p data-i18n="pillarBuildDesc">This is where we hit the grind. Co-working
+                                                sprints, code hacking sessions, collaborative design, and
+                                                project shipping. We build things that work, and help debug along the
+                                                way.</p>
+                                        <a class="pillar-link join-redirect" data-i18n="pillarBuildCta"
+                                                href="#showcase">
+                                                Sprint With Us
+                                                <svg viewbox="0 0 24 24">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                                </svg>
+                                        </a>
+                                </div>
+                                <!-- Pillar 3: Grow -->
+                                <div class="pillar-card">
+                                        <div class="pillar-icon-box">
+                                                <svg viewbox="0 0 24 24">
+                                                        <path d="M12 20V10M18 20V4M6 20v-6"></path>
+                                                </svg>
+                                        </div>
+                                        <h3 data-i18n="pillarGrow">Grow</h3>
+                                        <p data-i18n="pillarGrowDesc">Reviewing shipped items, seeking mentorship,
+                                                hosting workshops, and sharing advice. We support each other's
+                                                career progression and professional or artistic growth.</p>
+                                        <a class="pillar-link join-redirect" data-i18n="pillarGrowCta" href="#showcase">
+                                                Share Advice
+                                                <svg viewbox="0 0 24 24">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                                </svg>
+                                        </a>
+                                </div>
+                        </div>
+                </div>
+        </section>
+        <!-- Showcase Section -->
+        <section class="reveal" id="showcase">
+                <div class="container">
+                        <div class="showcase-header">
+                                <div>
+                                        <span class="section-label" data-i18n="showcaseLabel">Creations Gallery</span>
+                                        <h2 data-i18n="showcaseHeading">Inklings Showcase</h2>
+                                </div>
+                                <ul class="filter-nav">
+                                        <li><button class="filter-btn active" data-filter="all"
+                                                        data-i18n="filterRecent">Recent Creations</button></li>
+                                        <li><button class="filter-btn" data-filter="best" data-i18n="filterBest">Best
+                                                        Works</button></li>
+                                </ul>
+                        </div>
+                        <!-- Submit creation button - open to all -->
+                        <div class="showcase-submission-bar">
+                                <button class="btn btn-primary" data-i18n="submitCreationBtn"
+                                        id="openSubmitModalBtn">Submit Your Creation</button>
+                        </div>
+                        <!-- Dynamic creations grid -->
+                        <div class="showcase-grid" id="showcaseGrid">
+                                <!-- Empty State (Shows initially) -->
+                                <div class="empty-showcase" id="emptyShowcase">
+                                        <svg class="empty-icon" fill="none" stroke="currentColor" stroke-width="1"
+                                                viewbox="0 0 24 24">
+                                                <path
+                                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                                </path>
+                                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                                <line x1="12" x2="12" y1="22.08" y2="12"></line>
+                                        </svg>
+                                        <h3 data-i18n="emptyShowcaseTitle">The gallery is quiet</h3>
+                                        <p data-i18n="emptyShowcaseText">Be the first to share what you are building.
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </section>
+        <!-- Events Section -->
+        <section class="reveal" id="events">
+                <div class="container events-layout">
+                        <!-- Event Hosting Action & Description -->
+                        <div class="events-intro">
+                                <span class="section-label" data-i18n="eventsLabel">Get Involved</span>
+                                <h2 data-i18n="eventsHeading">Creative Events</h2>
+                                <p data-i18n="eventsLead">We host regular workspace events, feedback reviews, and
+                                        co-working circles. Any Inkling can schedule and
+                                        launch their own creative events to collaborate on ideas.</p>
+                                <button class="btn btn-primary" data-i18n="hostEventBtn" id="openHostModalBtn">Host Your
+                                        Own Event</button>
+                        </div>
+                        <!-- Events List Timeline -->
+                        <div class="events-timeline" id="eventsTimeline">
+                                <!-- Event 1 -->
 
-<!-- Event 2 -->
+                                <!-- Event 2 -->
 
-<!-- Event 3 -->
+                                <!-- Event 3 -->
 
-<!-- Events will appear here when hosted --></div>
-</div>
-</section>
-<!-- Inkling Sectors -->
-<section class="reveal" id="colonies">
-<div class="container colonies-container">
-<span class="section-label" data-i18n="sectorLabel">Global Sector</span>
-<h2 data-i18n="sectorHeading">Inkling Sectors</h2>
-<div class="colonies-grid">
+                                <!-- Events will appear here when hosted -->
+                        </div>
+                </div>
+        </section>
+        <!-- Inkling Sectors -->
+        <section class="reveal" id="colonies">
+                <div class="container colonies-container">
+                        <span class="section-label" data-i18n="sectorLabel">Global Sector</span>
+                        <h2 data-i18n="sectorHeading">Inkling Sectors</h2>
+                        <div class="colonies-grid">
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings Thailand mark" data-i18n-alt="thailandAlt" loading="lazy" src="images/INKLINGTHA.svg"/>
-</div>
-<p class="colony-caption" data-i18n="thailandCaption">The Inklings Thailand</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name">Toemkun P.</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings Thailand mark" data-i18n-alt="thailandAlt"
+                                                        loading="lazy" src="images/INKLINGTHA.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="thailandCaption">The Inklings Thailand</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name">Toemkun P.</span>
+                                        </div>
+                                </div>
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings UK mark" data-i18n-alt="ukAlt" loading="lazy" src="images/INKLINGUK.svg"/>
-</div>
-<p class="colony-caption" data-i18n="ukCaption">The Inklings UK</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name colony-head-vacant" data-i18n="headVacant">Position Open</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings UK mark" data-i18n-alt="ukAlt" loading="lazy"
+                                                        src="images/INKLINGUK.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="ukCaption">The Inklings UK</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name colony-head-vacant"
+                                                        data-i18n="headVacant">Position Open</span>
+                                        </div>
+                                </div>
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings Vietnam mark" data-i18n-alt="vietnamAlt" loading="lazy" src="images/INKLINGVIETNAM.svg"/>
-</div>
-<p class="colony-caption" data-i18n="vietnamCaption">The Inklings Vietnam</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name colony-head-vacant" data-i18n="headVacant">Position Open</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings Vietnam mark" data-i18n-alt="vietnamAlt"
+                                                        loading="lazy" src="images/INKLINGVIETNAM.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="vietnamCaption">The Inklings Vietnam</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name colony-head-vacant"
+                                                        data-i18n="headVacant">Position Open</span>
+                                        </div>
+                                </div>
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings Germany mark" data-i18n-alt="germanyAlt" loading="lazy" src="images/INKLINGGERMANY.svg"/>
-</div>
-<p class="colony-caption" data-i18n="germanyCaption">The Inklings Germany</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name colony-head-vacant" data-i18n="headVacant">Position Open</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings Germany mark" data-i18n-alt="germanyAlt"
+                                                        loading="lazy" src="images/INKLINGGERMANY.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="germanyCaption">The Inklings Germany</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name colony-head-vacant"
+                                                        data-i18n="headVacant">Position Open</span>
+                                        </div>
+                                </div>
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings Japan mark" data-i18n-alt="japanAlt" loading="lazy" src="images/INKLINGJAPAN.svg"/>
-</div>
-<p class="colony-caption" data-i18n="japanCaption">The Inklings Japan</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name">Linus K.</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings Japan mark" data-i18n-alt="japanAlt"
+                                                        loading="lazy" src="images/INKLINGJAPAN.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="japanCaption">The Inklings Japan</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name">Linus K.</span>
+                                        </div>
+                                </div>
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings Italy mark" data-i18n-alt="italyAlt" loading="lazy" src="images/inklingsITALY.svg"/>
-</div>
-<p class="colony-caption" data-i18n="italyCaption">The Inklings Italy</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name colony-head-vacant" data-i18n="headVacant">Position Open</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings Italy mark" data-i18n-alt="italyAlt"
+                                                        loading="lazy" src="images/inklingsITALY.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="italyCaption">The Inklings Italy</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name colony-head-vacant"
+                                                        data-i18n="headVacant">Position Open</span>
+                                        </div>
+                                </div>
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings Malaysia mark" data-i18n-alt="malaysiaAlt" loading="lazy" src="images/INKLINGSMALAYSIA.svg"/>
-</div>
-<p class="colony-caption" data-i18n="malaysiaCaption">The Inklings Malaysia</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name colony-head-vacant" data-i18n="headVacant">Position Open</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings Malaysia mark" data-i18n-alt="malaysiaAlt"
+                                                        loading="lazy" src="images/INKLINGSMALAYSIA.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="malaysiaCaption">The Inklings Malaysia</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name colony-head-vacant"
+                                                        data-i18n="headVacant">Position Open</span>
+                                        </div>
+                                </div>
 
-<div class="colony-item">
-<div class="colony-mark">
-<img alt="The Inklings USA mark" data-i18n-alt="usaAlt" loading="lazy" src="images/UNKLINGS USA.svg"/>
-</div>
-<p class="colony-caption" data-i18n="usaCaption">The Inklings USA</p>
-<div class="colony-head">
-<span class="colony-head-label" data-i18n="headLabel">Head</span>
-<span class="colony-head-name colony-head-discord" title="Discord: jsp72910">jackyswan</span>
-</div>
-</div>
+                                <div class="colony-item">
+                                        <div class="colony-mark">
+                                                <img alt="The Inklings USA mark" data-i18n-alt="usaAlt" loading="lazy"
+                                                        src="images/UNKLINGS USA.svg" />
+                                        </div>
+                                        <p class="colony-caption" data-i18n="usaCaption">The Inklings USA</p>
+                                        <div class="colony-head">
+                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
+                                                <span class="colony-head-name colony-head-discord"
+                                                        title="Discord: jsp72910">jackyswan</span>
+                                        </div>
+                                </div>
 
-</div>
-<p aria-live="polite" class="colony-welcome" id="colonyWelcome"></p>
-</div>
-</section>
-<!-- Join the Discord Section -->
-<section class="reveal" id="join">
-<div class="container join-container">
-<h2 data-i18n="joinHeading">Join the Discord</h2>
-<p data-i18n="joinLead">We keep the circle compact and focused to ensure high-quality feedback and real human connections. Scan the QR code or click below to join us on Discord.</p>
-<div class="discord-qr-center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/invite_discord_white.png"/>
-  <img alt="Discord QR Code" class="discord-qr" id="discordQr" src="images/invite_discord_black.png"/>
-</picture>
-<a class="btn btn-primary discord-direct-btn" href="https://discord.gg/NZXU7g8bXU" rel="noopener noreferrer" target="_blank" data-i18n="joinDiscordBtn">Join Discord</a>
-</div>
-</div>
-</section>
-<!-- Interactive Event Hosting Modal -->
-<div class="modal-overlay" id="hostModalOverlay">
-<div class="modal-content">
-<button aria-label="Close modal" class="modal-close" data-i18n-aria="hostModalClose" id="closeHostModalBtn">
-<svg viewbox="0 0 24 24">
-<path d="M18 6L6 18M6 6l12 12"></path>
-</svg>
-</button>
-<h3 data-i18n="hostModalHeading">Host your Event</h3>
-<form class="modal-form" id="hostEventForm">
-<div class="form-group">
-<input id="eventTitle" placeholder=" " required="" type="text"/>
-<label data-i18n="hostEventTitleLabel" for="eventTitle">Event Title</label>
-</div>
-<div class="form-group">
-<input id="eventTime" placeholder=" " required="" type="text"/>
-<label data-i18n="hostEventTimeLabel" for="eventTime">Date &amp; Time (e.g. July 20, 18:00)</label>
-</div>
-<div class="form-group">
-<select id="eventType" required="">
-<option disabled="" hidden="" selected="" value=""></option>
-<option data-i18n="hostEventTypeCoworking" value="Co-working">Co-working</option>
-<option data-i18n="hostEventTypeWorkshop" value="Workshop">Workshop</option>
-<option data-i18n="hostEventTypeSprint" value="Creative Sprint">Creative Sprint</option>
-<option data-i18n="hostEventTypeReview" value="Review">Feedback Review</option>
-</select>
-<label data-i18n="hostEventTypeLabel" for="eventType">Event Type</label>
-</div>
-<div class="form-group">
-<textarea id="eventDesc" placeholder=" " required="" rows="3"></textarea>
-<label data-i18n="hostEventDescLabel" for="eventDesc">Brief description</label>
-</div>
-<button class="btn btn-primary" data-i18n="hostEventSubmitBtn" type="submit">Publish Event</button>
-</form>
-</div>
-</div>
-<!-- Interactive Creation Submission Modal -->
-<div class="modal-overlay" id="submitModalOverlay">
-<div class="modal-content">
-<button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose" id="closeSubmitModalBtn">
-<svg viewbox="0 0 24 24">
-<path d="M18 6L6 18M6 6l12 12"></path>
-</svg>
-</button>
-<h3 data-i18n="submitModalHeading">Submit Creation</h3>
-<form class="modal-form" id="submitCreationForm">
-<div class="form-group">
-<input id="submitTitle" placeholder=" " required="" type="text"/>
-<label data-i18n="submitTitleLabel" for="submitTitle">Project Title</label>
-</div>
-<div class="form-group">
-<textarea id="submitDesc" placeholder=" " required="" rows="4"></textarea>
-<label data-i18n="submitDescLabel" for="submitDesc">Short Description</label>
-</div>
-<div class="form-group file-input-group">
-<input accept="image/*" id="submitImage" placeholder=" " type="file"/>
-<label data-i18n="submitImageLabel" for="submitImage">Attach Image</label>
-</div>
-<div class="image-preview" id="imagePreview"></div>
-<button class="btn btn-primary" data-i18n="submitCreationSubmit" type="submit">Publish Creation</button>
-</form>
-</div>
-</div>
-<!-- User Settings Modal -->
-<div class="modal-overlay" id="userSettingsModalOverlay">
-<div class="modal-content">
-<button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose" id="closeUserSettingsModalBtn">
-<svg viewbox="0 0 24 24">
-<path d="M18 6L6 18M6 6l12 12"></path>
-</svg>
-</button>
-<h3 data-i18n="settingsModalHeading">User Settings</h3>
-<form class="modal-form" id="userSettingsForm">
-<div class="form-group">
-<input id="settingsDisplayName" placeholder=" " required="" type="text"/>
-<label data-i18n="settingsDisplayNameLabel" for="settingsDisplayName">Display Name</label>
-</div>
-<div class="settings-actions">
-<button class="btn btn-primary" data-i18n="settingsSaveBtn" type="submit">Save Changes</button>
-</div>
-</form>
-</div>
-</div>
-<!-- Delete Confirmation Modal -->
-<div class="modal-overlay" id="deleteConfirmModalOverlay">
-<div class="modal-content">
-<button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose" id="closeDeleteConfirmBtn" type="button">
-<svg viewbox="0 0 24 24">
-<path d="M18 6L6 18M6 6l12 12"></path>
-</svg>
-</button>
-<h3 data-i18n="confirmDeleteHeading">Delete Project?</h3>
-<p id="deleteConfirmText" data-i18n="confirmDeleteText">Are you sure you want to delete this project? This cannot be undone.</p>
-<div class="modal-actions">
-<button class="btn btn-secondary" data-i18n="cancelDeleteBtn" id="cancelDeleteBtn" type="button">Cancel</button>
-<button class="btn btn-primary" data-i18n="confirmDeleteBtn" id="confirmDeleteBtn" type="button">Delete</button>
-</div>
-</div>
-</div>
-<!-- Footer -->
-<footer>
-<div class="container footer-content">
-<div class="footer-logo">
-<!-- SVG Nib & Droplet Logo -->
-<svg class="logo-svg" fill="none" viewbox="0 0 329 329" xmlns="http://www.w3.org/2000/svg">
-<path d="M89.0312 216.784L50.0156 294.818H128.049L145.14 329H0L72.5693 183.861L89.0312 216.784ZM181.59 294.818L164.499 329L147.408 294.818H181.59ZM329 329H183.858L200.949 294.818H278.987L239.968 216.781L256.43 183.858L329 329ZM115.173 164.5L98.7109 197.424L82.249 164.501L98.7109 131.577L115.173 164.5ZM246.749 164.498L230.288 197.421L213.826 164.498L230.287 131.574L246.749 164.498ZM190.249 51.4961L220.608 112.216L204.147 145.141L164.499 65.8457L124.854 145.136L108.393 112.214L138.753 51.4961H190.249ZM181.591 34.1807H147.41L164.501 0L181.591 34.1807Z" fill="currentColor"></path>
-<path d="M0.000153734 4.76837e-06L329 4.76837e-06L164.499 329L0.000153734 4.76837e-06ZM278.985 34.1818L50.0132 34.1818L164.501 263.154L278.985 34.1818Z" fill="currentColor"></path>
-</svg>
-<span data-i18n="logoText">The Inklings</span>
-</div>
-<div class="footer-links">
-<span data-i18n="footerCopyright">© 2026 The Inklings. All creative rights reserved.</span>
-<span class="footer-divider">|</span>
-<a class="discord-link" data-i18n="footerDiscord" href="https://discord.gg/NZXU7g8bXU" rel="noopener noreferrer" target="_blank">Join us on Discord</a>
-<span class="footer-divider">|</span>
-<a class="footer-email" href="mailto:inklings.the.1@gmail.com">inklings.the.1@gmail.com</a>
-</div>
-</div>
-</footer>
+                        </div>
+                        <p aria-live="polite" class="colony-welcome" id="colonyWelcome"></p>
+                </div>
+        </section>
+        <!-- Join the Discord Section -->
+        <section class="reveal" id="join">
+                <div class="container join-container">
+                        <h2 data-i18n="joinHeading">Join the Discord</h2>
+                        <p data-i18n="joinLead">We keep the circle compact and focused to ensure high-quality feedback
+                                and real human connections. Scan the QR code or click below to join us on Discord.</p>
+                        <div class="discord-qr-center">
+                                <picture>
+                                        <source media="(prefers-color-scheme: dark)"
+                                                srcset="images/invite_discord_white.png" />
+                                        <img alt="Discord QR Code" class="discord-qr" id="discordQr"
+                                                src="images/invite_discord_black.png" />
+                                </picture>
+                                <a class="btn btn-primary discord-direct-btn" href="https://discord.gg/NZXU7g8bXU"
+                                        rel="noopener noreferrer" target="_blank" data-i18n="joinDiscordBtn">Join
+                                        Discord</a>
+                        </div>
+                </div>
+        </section>
+        <!-- Interactive Event Hosting Modal -->
+        <div class="modal-overlay" id="hostModalOverlay">
+                <div class="modal-content">
+                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="hostModalClose"
+                                id="closeHostModalBtn">
+                                <svg viewbox="0 0 24 24">
+                                        <path d="M18 6L6 18M6 6l12 12"></path>
+                                </svg>
+                        </button>
+                        <h3 data-i18n="hostModalHeading">Host your Event</h3>
+                        <form class="modal-form" id="hostEventForm">
+                                <div class="form-group">
+                                        <input id="eventTitle" placeholder=" " required="" type="text" />
+                                        <label data-i18n="hostEventTitleLabel" for="eventTitle">Event Title</label>
+                                </div>
+                                <div class="form-group">
+                                        <input id="eventTime" placeholder=" " required="" type="text" />
+                                        <label data-i18n="hostEventTimeLabel" for="eventTime">Date &amp; Time (e.g. July
+                                                20, 18:00)</label>
+                                </div>
+                                <div class="form-group">
+                                        <select id="eventType" required="">
+                                                <option disabled="" hidden="" selected="" value=""></option>
+                                                <option data-i18n="hostEventTypeCoworking" value="Co-working">Co-working
+                                                </option>
+                                                <option data-i18n="hostEventTypeWorkshop" value="Workshop">Workshop
+                                                </option>
+                                                <option data-i18n="hostEventTypeSprint" value="Creative Sprint">Creative
+                                                        Sprint</option>
+                                                <option data-i18n="hostEventTypeReview" value="Review">Feedback Review
+                                                </option>
+                                        </select>
+                                        <label data-i18n="hostEventTypeLabel" for="eventType">Event Type</label>
+                                </div>
+                                <div class="form-group">
+                                        <textarea id="eventDesc" placeholder=" " required="" rows="3"></textarea>
+                                        <label data-i18n="hostEventDescLabel" for="eventDesc">Brief description</label>
+                                </div>
+                                <button class="btn btn-primary" data-i18n="hostEventSubmitBtn" type="submit">Publish
+                                        Event</button>
+                        </form>
+                </div>
+        </div>
+        <!-- Interactive Creation Submission Modal -->
+        <div class="modal-overlay" id="submitModalOverlay">
+                <div class="modal-content">
+                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose"
+                                id="closeSubmitModalBtn">
+                                <svg viewbox="0 0 24 24">
+                                        <path d="M18 6L6 18M6 6l12 12"></path>
+                                </svg>
+                        </button>
+                        <h3 data-i18n="submitModalHeading">Submit Creation</h3>
+                        <form class="modal-form" id="submitCreationForm">
+                                <div class="form-group">
+                                        <input id="submitTitle" placeholder=" " required="" type="text" />
+                                        <label data-i18n="submitTitleLabel" for="submitTitle">Project Title</label>
+                                </div>
+                                <div class="form-group">
+                                        <textarea id="submitDesc" placeholder=" " required="" rows="4"></textarea>
+                                        <label data-i18n="submitDescLabel" for="submitDesc">Short Description</label>
+                                </div>
+                                <div class="form-group file-input-group">
+                                        <input accept="image/*" id="submitImage" placeholder=" " type="file" />
+                                        <label data-i18n="submitImageLabel" for="submitImage">Attach Image x</label>
+                                </div>
+                                <div class="image-preview" id="imagePreview"></div>
+                                <button class="btn btn-primary" data-i18n="submitCreationSubmit" type="submit">Publish
+                                        Creation</button>
+                        </form>
+                </div>
+        </div>
+        <!-- User Settings Modal -->
+        <div class="modal-overlay" id="userSettingsModalOverlay">
+                <div class="modal-content">
+                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose"
+                                id="closeUserSettingsModalBtn">
+                                <svg viewbox="0 0 24 24">
+                                        <path d="M18 6L6 18M6 6l12 12"></path>
+                                </svg>
+                        </button>
+                        <h3 data-i18n="settingsModalHeading">User Settings</h3>
+                        <form class="modal-form" id="userSettingsForm">
+                                <div class="form-group">
+                                        <input id="settingsDisplayName" placeholder=" " required="" type="text" />
+                                        <label data-i18n="settingsDisplayNameLabel" for="settingsDisplayName">Display
+                                                Name</label>
+                                </div>
+                                <div class="settings-actions">
+                                        <button class="btn btn-primary" data-i18n="settingsSaveBtn" type="submit">Save
+                                                Changes</button>
+                                </div>
+                        </form>
+                </div>
+        </div>
+        <!-- Delete Confirmation Modal -->
+        <div class="modal-overlay" id="deleteConfirmModalOverlay">
+                <div class="modal-content">
+                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose"
+                                id="closeDeleteConfirmBtn" type="button">
+                                <svg viewbox="0 0 24 24">
+                                        <path d="M18 6L6 18M6 6l12 12"></path>
+                                </svg>
+                        </button>
+                        <h3 data-i18n="confirmDeleteHeading">Delete Project?</h3>
+                        <p id="deleteConfirmText" data-i18n="confirmDeleteText">Are you sure you want to delete this
+                                project? This cannot be undone.</p>
+                        <div class="modal-actions">
+                                <button class="btn btn-secondary" data-i18n="cancelDeleteBtn" id="cancelDeleteBtn"
+                                        type="button">Cancel</button>
+                                <button class="btn btn-primary" data-i18n="confirmDeleteBtn" id="confirmDeleteBtn"
+                                        type="button">Delete</button>
+                        </div>
+                </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+                <div class="container footer-content">
+                        <div class="footer-logo">
+                                <!-- SVG Nib & Droplet Logo -->
+                                <svg class="logo-svg" fill="none" viewbox="0 0 329 329"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M89.0312 216.784L50.0156 294.818H128.049L145.14 329H0L72.5693 183.861L89.0312 216.784ZM181.59 294.818L164.499 329L147.408 294.818H181.59ZM329 329H183.858L200.949 294.818H278.987L239.968 216.781L256.43 183.858L329 329ZM115.173 164.5L98.7109 197.424L82.249 164.501L98.7109 131.577L115.173 164.5ZM246.749 164.498L230.288 197.421L213.826 164.498L230.287 131.574L246.749 164.498ZM190.249 51.4961L220.608 112.216L204.147 145.141L164.499 65.8457L124.854 145.136L108.393 112.214L138.753 51.4961H190.249ZM181.591 34.1807H147.41L164.501 0L181.591 34.1807Z"
+                                                fill="currentColor"></path>
+                                        <path d="M0.000153734 4.76837e-06L329 4.76837e-06L164.499 329L0.000153734 4.76837e-06ZM278.985 34.1818L50.0132 34.1818L164.501 263.154L278.985 34.1818Z"
+                                                fill="currentColor"></path>
+                                </svg>
+                                <span data-i18n="logoText">The Inklings</span>
+                        </div>
+                        <div class="footer-links">
+                                <span data-i18n="footerCopyright">© 2026 The Inklings. All creative rights
+                                        reserved.</span>
+                                <span class="footer-divider">|</span>
+                                <a class="discord-link" data-i18n="footerDiscord" href="https://discord.gg/NZXU7g8bXU"
+                                        rel="noopener noreferrer" target="_blank">Join us on Discord</a>
+                                <span class="footer-divider">|</span>
+                                <a class="footer-email"
+                                        href="mailto:inklings.the.1@gmail.com">inklings.the.1@gmail.com</a>
+                        </div>
+                </div>
+        </footer>
 </body>
+
 </html>
