@@ -37,8 +37,6 @@
                                         <li><a class="nav-link" data-i18n="navManifesto" href="#about">Manifesto</a>
                                         </li>
                                         <li><a class="nav-link" data-i18n="navPillars" href="#pillars">Pillars</a></li>
-                                        <li><a class="nav-link" data-i18n="navShowcase" href="#showcase">Showcase</a>
-                                        </li>
                                         <li><a class="nav-link" data-i18n="navEvents" href="#events">Events</a></li>
                                         <li><a class="nav-link" data-i18n="navSector" href="#colonies">Sector</a></li>
                                         <li id="navJoinItem"><a class="nav-link" data-i18n="navJoin"
@@ -68,6 +66,10 @@
                                         <li data-lang="ja" role="option" tabindex="0">日本語</li>
                                 </ul>
                         </div>
+                        <!-- Theme Toggle -->
+                        <button aria-label="Toggle theme" class="theme-toggle-btn" data-i18n-aria="themeToggleAria" id="themeToggleBtn">
+                                <svg id="themeToggleIcon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" viewbox="0 0 24 24" width="18" height="18"></svg>
+                        </button>
                         <button aria-expanded="false" aria-label="Open menu" class="mobile-menu-btn"
                                 data-i18n-aria="mobileMenuAria" id="mobileMenuBtn">
                                 <svg aria-hidden="true" viewbox="0 0 24 24">
@@ -100,24 +102,47 @@
                         </a>
                 </div>
         </section>
-        <!-- Manifesto / About Section -->
+        <!-- History Section -->
         <section class="reveal" id="about">
-                <div class="container manifesto-layout">
-                        <div class="manifesto-header">
-                                <span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
-                                <h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
+                <div class="container history-container">
+                        <div class="history-header">
+                                <span class="section-label" data-i18n="historyLabel">Our Story</span>
+                                <h2 data-i18n="historyHeading">How we came to be.</h2>
                         </div>
-                        <div class="manifesto-body">
-                                <p data-i18n="aboutP1">The Inklings is designed to be an organized, compact, and relaxed
-                                        community of creators who are dedicated to helping others imagine, build, and
-                                        grow.</p>
-                                <p data-i18n="aboutP2">Whether you are working on a massive project, launching a
-                                        creative hobby or just want to share advice, we're here to hit the grind and
-                                        create meaningful works, as well as helping you host your own creative events.
-                                </p>
-                                <p data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit
-                                        alongside people who care about their craft.
-                                </p>
+                        <div class="history-timeline">
+                                <!-- Event 1: Artside / STAS -->
+                                <div class="history-event">
+                                        <div class="history-date">
+                                                <span data-i18n="historyDate1">February 3, 2024</span>
+                                        </div>
+                                        <div class="history-dot"></div>
+                                        <div class="history-content">
+                                                <h3 data-i18n="historyTitle1">The Art Society for Illustration, Design, and Expression</h3>
+                                                <p data-i18n="historyBody1">Originally founded under the name the Art Society for Illustration, Design, and Expression—or "Artside" for short—this group was established as a dedicated, welcoming hub where artists of all kinds could gather to create and express themselves freely. This initiative was a passionate attempt to revive an earlier organization known as the Society for Thai Artists and Students (STAS).</p>
+                                        </div>
+                                </div>
+                                <!-- Event 2: Dissolution -->
+                                <div class="history-event">
+                                        <div class="history-date">
+                                                <span data-i18n="historyDate2">Early 2025</span>
+                                        </div>
+                                        <div class="history-dot history-dot--quiet"></div>
+                                        <div class="history-content">
+                                                <h3 data-i18n="historyTitle2">A Period of Silence</h3>
+                                                <p data-i18n="historyBody2">Despite the founders' initial intentions, the first iteration of Artside struggled to maintain consistent momentum, eventually falling entirely quiet in early 2025 before dissolving completely. A period of dormancy followed.</p>
+                                        </div>
+                                </div>
+                                <!-- Event 3: The Inklings -->
+                                <div class="history-event">
+                                        <div class="history-date">
+                                                <span data-i18n="historyDate3">May 27, 2026</span>
+                                        </div>
+                                        <div class="history-dot history-dot--active"></div>
+                                        <div class="history-content">
+                                                <h3 data-i18n="historyTitle3">The Inklings — Reborn</h3>
+                                                <p data-i18n="historyBody3">The group successfully found its footing again, officially rebranding as The Inklings and introducing a profound shift in its core philosophical focus. Instead of operating strictly as a club for traditional artists, it transformed into a close-knit community centered around imagination and creativity as tools to help people do good in the world. The Inklings has since established multiple regional sectors across different countries, hosting localized community events and shared creative activities.</p>
+                                        </div>
+                                </div>
                         </div>
                 </div>
         </section>
@@ -144,7 +169,7 @@
                                                 review, and visual brainstorming. We push the boundaries of
                                                 what is possible, bringing raw sketches into logical frameworks.</p>
                                         <a class="pillar-link join-redirect" data-i18n="pillarImagineCta"
-                                                href="#showcase">
+                                                href="#join">
                                                 Brainstorm Info
                                                 <svg viewbox="0 0 24 24">
                                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -166,7 +191,7 @@
                                                 project shipping. We build things that work, and help debug along the
                                                 way.</p>
                                         <a class="pillar-link join-redirect" data-i18n="pillarBuildCta"
-                                                href="#showcase">
+                                                href="#join">
                                                 Sprint With Us
                                                 <svg viewbox="0 0 24 24">
                                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -184,7 +209,7 @@
                                         <p data-i18n="pillarGrowDesc">Reviewing shipped items, seeking mentorship,
                                                 hosting workshops, and sharing advice. We support each other's
                                                 career progression and professional or artistic growth.</p>
-                                        <a class="pillar-link join-redirect" data-i18n="pillarGrowCta" href="#showcase">
+                                        <a class="pillar-link join-redirect" data-i18n="pillarGrowCta" href="#join">
                                                 Share Advice
                                                 <svg viewbox="0 0 24 24">
                                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -194,67 +219,31 @@
                         </div>
                 </div>
         </section>
-        <!-- Showcase Section -->
-        <section class="reveal" id="showcase">
-                <div class="container">
-                        <div class="showcase-header">
-                                <div>
-                                        <span class="section-label" data-i18n="showcaseLabel">Creations Gallery</span>
-                                        <h2 data-i18n="showcaseHeading">Inklings Showcase</h2>
-                                </div>
-                                <ul class="filter-nav">
-                                        <li><button class="filter-btn active" data-filter="all"
-                                                        data-i18n="filterRecent">Recent Creations</button></li>
-                                        <li><button class="filter-btn" data-filter="best" data-i18n="filterBest">Best
-                                                        Works</button></li>
-                                </ul>
-                        </div>
-                        <!-- Submit creation button - open to all -->
-                        <div class="showcase-submission-bar">
-                                <button class="btn btn-primary" data-i18n="submitCreationBtn"
-                                        id="openSubmitModalBtn">Submit Your Creation</button>
-                        </div>
-                        <!-- Dynamic creations grid -->
-                        <div class="showcase-grid" id="showcaseGrid">
-                                <!-- Empty State (Shows initially) -->
-                                <div class="empty-showcase" id="emptyShowcase">
-                                        <svg class="empty-icon" fill="none" stroke="currentColor" stroke-width="1"
-                                                viewbox="0 0 24 24">
-                                                <path
-                                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                                </path>
-                                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                                <line x1="12" x2="12" y1="22.08" y2="12"></line>
-                                        </svg>
-                                        <h3 data-i18n="emptyShowcaseTitle">The gallery is quiet</h3>
-                                        <p data-i18n="emptyShowcaseText">Be the first to share what you are building.
-                                        </p>
-                                </div>
-                        </div>
-                </div>
-        </section>
         <!-- Events Section -->
         <section class="reveal" id="events">
                 <div class="container events-layout">
-                        <!-- Event Hosting Action & Description -->
+                        <!-- Group news & planned events -->
                         <div class="events-intro">
                                 <span class="section-label" data-i18n="eventsLabel">Get Involved</span>
                                 <h2 data-i18n="eventsHeading">Creative Events</h2>
-                                <p data-i18n="eventsLead">We host regular workspace events, feedback reviews, and
-                                        co-working circles. Any Inkling can schedule and
-                                        launch their own creative events to collaborate on ideas.</p>
-                                <button class="btn btn-primary" data-i18n="hostEventBtn" id="openHostModalBtn">Host Your
-                                        Own Event</button>
+                                <p data-i18n="eventsLead">The latest news from across The Inklings, plus a first look
+                                        at the creative events we have coming up.</p>
                         </div>
                         <!-- Events List Timeline -->
                         <div class="events-timeline" id="eventsTimeline">
-                                <!-- Event 1 -->
-
-                                <!-- Event 2 -->
-
-                                <!-- Event 3 -->
-
-                                <!-- Events will appear here when hosted -->
+                                <!-- Empty State (shown until events are added) -->
+                                <div class="empty-events" id="emptyEvents">
+                                        <svg class="empty-icon" fill="none" stroke="currentColor" stroke-width="1"
+                                                viewbox="0 0 24 24">
+                                                <rect height="18" width="18" x="3" y="4" rx="2"></rect>
+                                                <line x1="3" x2="21" y1="9" y2="9"></line>
+                                                <line x1="8" x2="8" y1="2" y2="6"></line>
+                                                <line x1="16" x2="16" y1="2" y2="6"></line>
+                                        </svg>
+                                        <h3 data-i18n="noEventsTitle">Oops! No events yet!</h3>
+                                        <p data-i18n="noEventsText">Check back soon — we're putting together our next
+                                                creative gathering.</p>
+                                </div>
                         </div>
                 </div>
         </section>
@@ -390,121 +379,6 @@
                         </div>
                 </div>
         </section>
-        <!-- Interactive Event Hosting Modal -->
-        <div class="modal-overlay" id="hostModalOverlay">
-                <div class="modal-content">
-                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="hostModalClose"
-                                id="closeHostModalBtn">
-                                <svg viewbox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12"></path>
-                                </svg>
-                        </button>
-                        <h3 data-i18n="hostModalHeading">Host your Event</h3>
-                        <form class="modal-form" id="hostEventForm">
-                                <div class="form-group">
-                                        <input id="eventTitle" placeholder=" " required="" type="text" />
-                                        <label data-i18n="hostEventTitleLabel" for="eventTitle">Event Title</label>
-                                </div>
-                                <div class="form-group">
-                                        <input id="eventTime" placeholder=" " required="" type="text" />
-                                        <label data-i18n="hostEventTimeLabel" for="eventTime">Date &amp; Time (e.g. July
-                                                20, 18:00)</label>
-                                </div>
-                                <div class="form-group">
-                                        <select id="eventType" required="">
-                                                <option disabled="" hidden="" selected="" value=""></option>
-                                                <option data-i18n="hostEventTypeCoworking" value="Co-working">Co-working
-                                                </option>
-                                                <option data-i18n="hostEventTypeWorkshop" value="Workshop">Workshop
-                                                </option>
-                                                <option data-i18n="hostEventTypeSprint" value="Creative Sprint">Creative
-                                                        Sprint</option>
-                                                <option data-i18n="hostEventTypeReview" value="Review">Feedback Review
-                                                </option>
-                                        </select>
-                                        <label data-i18n="hostEventTypeLabel" for="eventType">Event Type</label>
-                                </div>
-                                <div class="form-group">
-                                        <textarea id="eventDesc" placeholder=" " required="" rows="3"></textarea>
-                                        <label data-i18n="hostEventDescLabel" for="eventDesc">Brief description</label>
-                                </div>
-                                <button class="btn btn-primary" data-i18n="hostEventSubmitBtn" type="submit">Publish
-                                        Event</button>
-                        </form>
-                </div>
-        </div>
-        <!-- Interactive Creation Submission Modal -->
-        <div class="modal-overlay" id="submitModalOverlay">
-                <div class="modal-content">
-                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose"
-                                id="closeSubmitModalBtn">
-                                <svg viewbox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12"></path>
-                                </svg>
-                        </button>
-                        <h3 data-i18n="submitModalHeading">Submit Creation</h3>
-                        <form class="modal-form" id="submitCreationForm">
-                                <div class="form-group">
-                                        <input id="submitTitle" placeholder=" " required="" type="text" />
-                                        <label data-i18n="submitTitleLabel" for="submitTitle">Project Title</label>
-                                </div>
-                                <div class="form-group">
-                                        <textarea id="submitDesc" placeholder=" " required="" rows="4"></textarea>
-                                        <label data-i18n="submitDescLabel" for="submitDesc">Short Description</label>
-                                </div>
-                                <div class="form-group file-input-group">
-                                        <input accept="image/*" id="submitImage" placeholder=" " type="file" />
-                                        <label data-i18n="submitImageLabel" for="submitImage">Attach Image x</label>
-                                </div>
-                                <div class="image-preview" id="imagePreview"></div>
-                                <button class="btn btn-primary" data-i18n="submitCreationSubmit" type="submit">Publish
-                                        Creation</button>
-                        </form>
-                </div>
-        </div>
-        <!-- User Settings Modal -->
-        <div class="modal-overlay" id="userSettingsModalOverlay">
-                <div class="modal-content">
-                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose"
-                                id="closeUserSettingsModalBtn">
-                                <svg viewbox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12"></path>
-                                </svg>
-                        </button>
-                        <h3 data-i18n="settingsModalHeading">User Settings</h3>
-                        <form class="modal-form" id="userSettingsForm">
-                                <div class="form-group">
-                                        <input id="settingsDisplayName" placeholder=" " required="" type="text" />
-                                        <label data-i18n="settingsDisplayNameLabel" for="settingsDisplayName">Display
-                                                Name</label>
-                                </div>
-                                <div class="settings-actions">
-                                        <button class="btn btn-primary" data-i18n="settingsSaveBtn" type="submit">Save
-                                                Changes</button>
-                                </div>
-                        </form>
-                </div>
-        </div>
-        <!-- Delete Confirmation Modal -->
-        <div class="modal-overlay" id="deleteConfirmModalOverlay">
-                <div class="modal-content">
-                        <button aria-label="Close modal" class="modal-close" data-i18n-aria="submitModalClose"
-                                id="closeDeleteConfirmBtn" type="button">
-                                <svg viewbox="0 0 24 24">
-                                        <path d="M18 6L6 18M6 6l12 12"></path>
-                                </svg>
-                        </button>
-                        <h3 data-i18n="confirmDeleteHeading">Delete Project?</h3>
-                        <p id="deleteConfirmText" data-i18n="confirmDeleteText">Are you sure you want to delete this
-                                project? This cannot be undone.</p>
-                        <div class="modal-actions">
-                                <button class="btn btn-secondary" data-i18n="cancelDeleteBtn" id="cancelDeleteBtn"
-                                        type="button">Cancel</button>
-                                <button class="btn btn-primary" data-i18n="confirmDeleteBtn" id="confirmDeleteBtn"
-                                        type="button">Delete</button>
-                        </div>
-                </div>
-        </div>
         <!-- Footer -->
         <footer>
                 <div class="container footer-content">
