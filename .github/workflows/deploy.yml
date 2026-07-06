@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+
+on:
+  # ทุกครั้งที่ push ขึ้น main จะ deploy อัตโนมัติ
+  push:
+    branches: [main]
+  # อนุญาตให้กดรัน manual จากหน้า Actions ได้
+  workflow_dispatch:
+
+# สิทธิ์ที่จำเป็นสำหรับ GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# ป้องกันการ deploy ซ้อนทับกัน — ให้ตัวใหม่ยกเลิกตัวเก่า
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # รวมไฟล์ทั้งหมดใน public/ เป็น artifact สำหรับ deploy
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
