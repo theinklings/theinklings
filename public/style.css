@@ -939,7 +939,12 @@ nav a:hover::after, nav a.active::after {
   background: var(--card-bg);
 }
 
-/* Swap QR image based on data-theme (handled by JS) */
+/* QR code theme swap — img src defaults to white (dark bg), light mode shows black */
+[data-theme="light"] #discordQr {
+  content: url('images/invite_discord_black.png');
+}
+
+/* dark mode keeps the white QR (already the src default) */
 [data-theme="dark"] #discordQr {
   content: url('images/invite_discord_white.png');
 }
