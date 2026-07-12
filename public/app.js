@@ -352,6 +352,16 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>`;
 
+    const okBtn = container.querySelector('.file-error-ok:not(.file-error-secondary)');
+    if (okBtn) {
+      okBtn.addEventListener('click', () => {
+        createModal(
+          'Nice try.',
+          'Did you really think clicking OK would fix anything? Events still don\'t exist. Chill for a bit.'
+        );
+      });
+    }
+
     const whyBtn = container.querySelector('.file-error-secondary');
     if (whyBtn) {
       whyBtn.addEventListener('click', () => {
