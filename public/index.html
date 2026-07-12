@@ -105,15 +105,33 @@
         </section>
         <!-- Manifesto / About Section -->
         <section class="reveal" id="about">
-                <div class="container manifesto-layout">
-                        <div class="manifesto-header">
-                                <span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
-                                <h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
+                <div class="container manifesto-window">
+                        <div class="manifesto-titlebar">
+                                <div class="manifesto-titlebar-dots"><span></span><span></span><span></span></div>
+                                <span class="manifesto-titlebar-title">manifesto.txt — Notepad</span>
+                                <div class="manifesto-titlebar-btns" aria-hidden="true">
+                                        <span>_</span><span>□</span><span>×</span>
+                                </div>
+                        </div>
+                        <div class="manifesto-menu">
+                                <span>File</span>
+                                <span>Edit</span>
+                                <span>Search</span>
+                                <span>Help</span>
                         </div>
                         <div class="manifesto-body">
+                                <div class="manifesto-header">
+                                        <span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
+                                        <h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
+                                </div>
                                 <p data-i18n-html="aboutP1Html"><strong>The Inklings</strong> is designed to be an organized, compact, and relaxed community of creators who are dedicated to helping others imagine, build, and grow.</p>
                                 <p data-i18n="aboutP2">Whether you are working on a massive project, launching a creative hobby or just want to share advice, we're here to hit the grind and create meaningful works, as well as helping you host your own creative events.</p>
                                 <p data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit alongside people who care about their craft.</p>
+                        </div>
+                        <div class="manifesto-statusbar">
+                                <span>Ln 1, Col 1</span>
+                                <span>100% UTF-8</span>
+                                <span>Windows (CRLF)</span>
                         </div>
                 </div>
         </section>
@@ -128,6 +146,7 @@
                         <div class="pillars-grid">
                                 <!-- Pillar 1: Imagine -->
                                 <div class="pillar-card">
+                                        <div class="pillar-dots"><span></span><span></span><span></span></div>
                                         <div class="pillar-card-inner">
                                         <div class="pillar-icon-box">
                                                 <svg viewbox="0 0 24 24">
@@ -151,6 +170,7 @@
                                 </div>
                                 <!-- Pillar 2: Build -->
                                 <div class="pillar-card">
+                                        <div class="pillar-dots"><span></span><span></span><span></span></div>
                                         <div class="pillar-card-inner">
                                         <div class="pillar-icon-box">
                                                 <svg viewbox="0 0 24 24">
@@ -175,6 +195,7 @@
                                 </div>
                                 <!-- Pillar 3: Grow -->
                                 <div class="pillar-card">
+                                        <div class="pillar-dots"><span></span><span></span><span></span></div>
                                         <div class="pillar-card-inner">
                                         <div class="pillar-icon-box">
                                                 <svg viewbox="0 0 24 24">
@@ -206,134 +227,176 @@
                                 <p data-i18n="eventsLead">The latest news from across The Inklings, plus a first look
                                         at the creative events we have coming up.</p>
                         </div>
-                        <!-- Events List Timeline -->
-                        <div class="events-timeline" id="eventsTimeline">
-                                <!-- Empty State (shown until events are added) -->
-                                <div class="empty-events" id="emptyEvents">
-                                        <svg class="empty-icon" fill="none" stroke="currentColor" stroke-width="1"
-                                                viewbox="0 0 24 24">
-                                                <rect height="18" width="18" x="3" y="4" rx="2"></rect>
-                                                <line x1="3" x2="21" y1="9" y2="9"></line>
-                                                <line x1="8" x2="8" y1="2" y2="6"></line>
-                                                <line x1="16" x2="16" y1="2" y2="6"></line>
-                                        </svg>
-                                        <h3 data-i18n="noEventsTitle">Oops! No events yet!</h3>
-                                        <p data-i18n="noEventsText">Check back soon — we're putting together our next
-                                                creative gathering.</p>
-                                </div>
-                        </div>
+                        <!-- Events File Cabinet — rendered by app.js -->
+                        <div class="events-timeline" id="eventsTimeline"></div>
                 </div>
         </section>
         <!-- Inkling Sectors -->
-        <section class="reveal" id="colonies">
+        <section class="reveal" id="colonies" data-gated="true">
                 <div class="container colonies-container">
                         <span class="section-label" data-i18n="sectorLabel">Global Sector</span>
                         <h2 data-i18n="sectorHeading">Inkling Sectors</h2>
-                        <div class="colonies-grid">
 
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings Thailand mark" data-i18n-alt="thailandAlt"
-                                                        loading="lazy" src="images/INKLINGTHA.svg" />
-                                        </div>
-                                        <p class="colony-caption" data-i18n="thailandCaption">The Inklings Thailand</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name">Toemkun P.</span>
+                        <div class="sector-window">
+                                <div class="sector-titlebar">
+                                        <div class="sector-titlebar-dots"><span></span><span></span><span></span></div>
+                                        <span class="sector-titlebar-title">sectors.exe</span>
+                                        <div class="sector-titlebar-btns" aria-hidden="true">
+                                                <span>_</span><span>□</span><span>×</span>
                                         </div>
                                 </div>
 
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings UK mark" data-i18n-alt="ukAlt" loading="lazy"
-                                                        src="images/INKLINGUK.svg" />
-                                        </div>
-                                        <p class="colony-caption" data-i18n="ukCaption">The Inklings UK</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name colony-head-vacant"
-                                                        data-i18n="headVacant">Position Open</span>
-                                        </div>
+                                <div class="sector-tabs" role="tablist" aria-label="Inkling Sectors">
+                                        <button class="sector-tab is-active" role="tab" aria-selected="true" data-sector="0">
+                                                <span class="sector-tab-flag">🇹🇭</span>
+                                                <span class="sector-tab-name">Thailand</span>
+                                        </button>
+                                        <button class="sector-tab" role="tab" aria-selected="false" data-sector="1">
+                                                <span class="sector-tab-flag">🇬🇧</span>
+                                                <span class="sector-tab-name">UK</span>
+                                        </button>
+                                        <button class="sector-tab" role="tab" aria-selected="false" data-sector="2">
+                                                <span class="sector-tab-flag">🇻🇳</span>
+                                                <span class="sector-tab-name">Vietnam</span>
+                                        </button>
+                                        <button class="sector-tab" role="tab" aria-selected="false" data-sector="3">
+                                                <span class="sector-tab-flag">🇩🇪</span>
+                                                <span class="sector-tab-name">Germany</span>
+                                        </button>
+                                        <button class="sector-tab" role="tab" aria-selected="false" data-sector="4">
+                                                <span class="sector-tab-flag">🇯🇵</span>
+                                                <span class="sector-tab-name">Japan</span>
+                                        </button>
+                                        <button class="sector-tab" role="tab" aria-selected="false" data-sector="5">
+                                                <span class="sector-tab-flag">🇮🇹</span>
+                                                <span class="sector-tab-name">Italy</span>
+                                        </button>
+                                        <button class="sector-tab" role="tab" aria-selected="false" data-sector="6">
+                                                <span class="sector-tab-flag">🇲🇾</span>
+                                                <span class="sector-tab-name">Malaysia</span>
+                                        </button>
+                                        <button class="sector-tab" role="tab" aria-selected="false" data-sector="7">
+                                                <span class="sector-tab-flag">🇺🇸</span>
+                                                <span class="sector-tab-name">USA</span>
+                                        </button>
                                 </div>
 
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings Vietnam mark" data-i18n-alt="vietnamAlt"
-                                                        loading="lazy" src="images/INKLINGVIETNAM.svg" />
+                                <div class="sector-panels">
+                                        <div class="sector-panel is-active" data-sector="0" role="tabpanel">
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings Thailand mark" data-i18n-alt="thailandAlt" loading="lazy" src="images/INKLINGTHA.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="thailandCaption">The Inklings Thailand</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name">Toemkun P.</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
                                         </div>
-                                        <p class="colony-caption" data-i18n="vietnamCaption">The Inklings Vietnam</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name colony-head-vacant"
-                                                        data-i18n="headVacant">Position Open</span>
+                                        <div class="sector-panel" data-sector="1" role="tabpanel" hidden>
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings UK mark" data-i18n-alt="ukAlt" loading="lazy" src="images/INKLINGUK.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="ukCaption">The Inklings UK</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name sector-head-vacant" data-i18n="headVacant">Position Open</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="sector-panel" data-sector="2" role="tabpanel" hidden>
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings Vietnam mark" data-i18n-alt="vietnamAlt" loading="lazy" src="images/INKLINGVIETNAM.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="vietnamCaption">The Inklings Vietnam</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name sector-head-vacant" data-i18n="headVacant">Position Open</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="sector-panel" data-sector="3" role="tabpanel" hidden>
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings Germany mark" data-i18n-alt="germanyAlt" loading="lazy" src="images/INKLINGGERMANY.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="germanyCaption">The Inklings Germany</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name sector-head-vacant" data-i18n="headVacant">Position Open</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="sector-panel" data-sector="4" role="tabpanel" hidden>
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings Japan mark" data-i18n-alt="japanAlt" loading="lazy" src="images/INKLINGJAPAN.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="japanCaption">The Inklings Japan</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name">Linus K.</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="sector-panel" data-sector="5" role="tabpanel" hidden>
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings Italy mark" data-i18n-alt="italyAlt" loading="lazy" src="images/inklingsITALY.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="italyCaption">The Inklings Italy</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name sector-head-vacant" data-i18n="headVacant">Position Open</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="sector-panel" data-sector="6" role="tabpanel" hidden>
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings Malaysia mark" data-i18n-alt="malaysiaAlt" loading="lazy" src="images/INKLINGSMALAYSIA.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="malaysiaCaption">The Inklings Malaysia</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name sector-head-vacant" data-i18n="headVacant">Position Open</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="sector-panel" data-sector="7" role="tabpanel" hidden>
+                                                <div class="sector-panel-grid">
+                                                        <div class="sector-mark">
+                                                                <img alt="The Inklings USA mark" data-i18n-alt="usaAlt" loading="lazy" src="images/UNKLINGS USA.svg" />
+                                                        </div>
+                                                        <div class="sector-info">
+                                                                <p class="sector-caption" data-i18n="usaCaption">The Inklings USA</p>
+                                                                <div class="sector-head">
+                                                                        <span class="sector-head-label" data-i18n="headLabel">Head</span>
+                                                                        <span class="sector-head-name sector-head-discord" title="Discord: jsp72910">jackyswan</span>
+                                                                </div>
+                                                        </div>
+                                                </div>
                                         </div>
                                 </div>
-
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings Germany mark" data-i18n-alt="germanyAlt"
-                                                        loading="lazy" src="images/INKLINGGERMANY.svg" />
-                                        </div>
-                                        <p class="colony-caption" data-i18n="germanyCaption">The Inklings Germany</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name colony-head-vacant"
-                                                        data-i18n="headVacant">Position Open</span>
-                                        </div>
-                                </div>
-
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings Japan mark" data-i18n-alt="japanAlt"
-                                                        loading="lazy" src="images/INKLINGJAPAN.svg" />
-                                        </div>
-                                        <p class="colony-caption" data-i18n="japanCaption">The Inklings Japan</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name">Linus K.</span>
-                                        </div>
-                                </div>
-
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings Italy mark" data-i18n-alt="italyAlt"
-                                                        loading="lazy" src="images/inklingsITALY.svg" />
-                                        </div>
-                                        <p class="colony-caption" data-i18n="italyCaption">The Inklings Italy</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name colony-head-vacant"
-                                                        data-i18n="headVacant">Position Open</span>
-                                        </div>
-                                </div>
-
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings Malaysia mark" data-i18n-alt="malaysiaAlt"
-                                                        loading="lazy" src="images/INKLINGSMALAYSIA.svg" />
-                                        </div>
-                                        <p class="colony-caption" data-i18n="malaysiaCaption">The Inklings Malaysia</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name colony-head-vacant"
-                                                        data-i18n="headVacant">Position Open</span>
-                                        </div>
-                                </div>
-
-                                <div class="colony-item">
-                                        <div class="colony-mark">
-                                                <img alt="The Inklings USA mark" data-i18n-alt="usaAlt" loading="lazy"
-                                                        src="images/UNKLINGS USA.svg" />
-                                        </div>
-                                        <p class="colony-caption" data-i18n="usaCaption">The Inklings USA</p>
-                                        <div class="colony-head">
-                                                <span class="colony-head-label" data-i18n="headLabel">Head</span>
-                                                <span class="colony-head-name colony-head-discord"
-                                                        title="Discord: jsp72910">jackyswan</span>
-                                        </div>
-                                </div>
-
                         </div>
+
                         <p aria-live="polite" class="colony-welcome" id="colonyWelcome"></p>
                 </div>
         </section>

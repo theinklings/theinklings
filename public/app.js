@@ -266,5 +266,261 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('languagechanged', () => {
     resetHeroTypewriter();
+    // Re-render events cabinet so i18n strings refresh
+    initFileCabinet();
+  });
+
+  // ─────────────────────────────────────────────────────────────────────
+  // EVENTS — PC-style empty-state error dialog
+  // ─────────────────────────────────────────────────────────────────────
+
+  function createModal(title, message, onClose) {
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay active file-error-modal-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', title);
+
+    overlay.innerHTML = `
+      <div class="modal-content file-error-modal">
+        <div class="modal-inner">
+          <div class="file-error-modal-body">
+            <div class="file-error-icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="file-error-modal-content">
+              <h3 class="file-error-heading">${title}</h3>
+              <p class="file-error-desc">${message}</p>
+              <button class="file-error-ok file-error-modal-ok" type="button">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+    const close = () => {
+      overlay.classList.remove('active');
+      setTimeout(() => overlay.remove(), 300);
+      if (typeof onClose === 'function') onClose();
+    };
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) close();
+    });
+    overlay.querySelector('.file-error-modal-ok').addEventListener('click', close);
+
+    document.body.appendChild(overlay);
+    // Trigger reflow so the transition plays
+    requestAnimationFrame(() => overlay.classList.add('active'));
+  }
+
+  function initFileCabinet() {
+    const container = document.getElementById('eventsTimeline');
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="file-error-dialog" role="alert" aria-live="polite">
+        <div class="file-error-titlebar">
+          <div class="file-error-dots"><span></span><span></span><span></span></div>
+          <span class="file-error-title">events.exe — System Error</span>
+          <div class="file-error-winbtns" aria-hidden="true">
+            <span>_</span><span>□</span><span>×</span>
+          </div>
+        </div>
+        <div class="file-error-body">
+          <div class="file-error-icon-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="file-error-content">
+            <p class="file-error-code">ERROR 0x4E4F4556: EVENTS_NOT_FOUND</p>
+            <h3 class="file-error-heading">Whoops, no events yet!</h3>
+            <p class="file-error-desc">Check back soon &mdash; we&rsquo;re putting together our next creative gathering.</p>
+            <div class="file-error-actions">
+              <button class="file-error-ok" type="button">OK</button>
+              <button class="file-error-ok file-error-secondary" type="button">Why the hell not??</button>
+            </div>
+          </div>
+        </div>
+        <div class="file-error-terminal">
+          <pre><span class="file-error-prompt">C:\INKLINGS&gt;</span>dir /events
+<span class="file-error-line">File Not Found</span>
+
+<span class="file-error-prompt">C:\INKLINGS&gt;</span><span class="file-error-cursor"></span></pre>
+        </div>
+      </div>`;
+
+    const whyBtn = container.querySelector('.file-error-secondary');
+    if (whyBtn) {
+      whyBtn.addEventListener('click', () => {
+        createModal(
+          'Patience, friend.',
+          'Look dude events take time to make so just wait K?'
+        );
+      });
+    }
+  }
+
+  initFileCabinet();
+
+  // ─────────────────────────────────────────────────────────────────────
+  // SECTORS GATE — teasing modal before showing the sectors section
+  // ─────────────────────────────────────────────────────────────────────
+
+  const coloniesSection = document.getElementById('colonies');
+  const coloniesObserverOptions = {
+    root: null,
+    rootMargin: '-30% 0px -30% 0px',
+    threshold: 0,
+  };
+
+  function revealColonies() {
+    if (!coloniesSection) return;
+    coloniesSection.removeAttribute('data-gated');
+    coloniesSection.classList.add('revealed');
+  }
+
+  function showSectorGate() {
+    createSectorModal(
+      'Hold up.',
+      'Are you sure you wanna see something cool??',
+      [
+        { label: 'Yeah!', style: 'primary', action: () => revealColonies() },
+        { label: 'Nah', style: 'secondary', action: () => showForcedChoice() },
+      ]
+    );
+  }
+
+  function showForcedChoice() {
+    createSectorModal(
+      'Tough luck.',
+      'Sorry dude you dont really have a choice',
+      [
+        { label: 'OK', style: 'primary', action: () => revealColonies() },
+      ]
+    );
+  }
+
+  function createSectorModal(title, message, buttons) {
+    const existing = document.querySelector('.sector-gate-overlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay active sector-gate-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', title);
+
+    const buttonsHtml = buttons
+      .map(
+        (btn, idx) =>
+          `<button class="file-error-ok ${btn.style === 'secondary' ? 'file-error-secondary' : ''}" type="button" data-idx="${idx}">${btn.label}</button>`
+      )
+      .join('');
+
+    overlay.innerHTML = `
+      <div class="modal-content file-error-modal">
+        <div class="modal-inner">
+          <div class="file-error-modal-body">
+            <div class="file-error-icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="file-error-modal-content">
+              <h3 class="file-error-heading">${title}</h3>
+              <p class="file-error-desc">${message}</p>
+              <div class="file-error-actions">${buttonsHtml}</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) return; // force a button click
+    });
+
+    overlay.querySelectorAll('button[data-idx]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.getAttribute('data-idx'));
+        overlay.classList.remove('active');
+        setTimeout(() => {
+          overlay.remove();
+          if (buttons[idx] && typeof buttons[idx].action === 'function') {
+            buttons[idx].action();
+          }
+        }, 300);
+      });
+    });
+
+    document.body.appendChild(overlay);
+    requestAnimationFrame(() => overlay.classList.add('active'));
+  }
+
+  if (coloniesSection) {
+    // Disable scroll-reveal on the section until the gate is passed
+    coloniesSection.classList.remove('reveal');
+
+    let gateShown = false;
+    const coloniesObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !gateShown) {
+          gateShown = true;
+          showSectorGate();
+        }
+      });
+    }, coloniesObserverOptions);
+
+    coloniesObserver.observe(coloniesSection);
+  }
+
+  // ─────────────────────────────────────────────────────────────────────
+  // SECTOR TABS — retro .exe tab switcher
+  // ─────────────────────────────────────────────────────────────────────
+
+  const sectorTabs = document.querySelectorAll('.sector-tab');
+  const sectorPanels = document.querySelectorAll('.sector-panel');
+
+  function switchSector(index) {
+    sectorTabs.forEach((tab) => {
+      const isTarget = tab.dataset.sector === String(index);
+      tab.classList.toggle('is-active', isTarget);
+      tab.setAttribute('aria-selected', String(isTarget));
+    });
+
+    sectorPanels.forEach((panel) => {
+      const isTarget = panel.dataset.sector === String(index);
+      panel.classList.toggle('is-active', isTarget);
+      panel.hidden = !isTarget;
+    });
+  }
+
+  sectorTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      switchSector(Number(tab.dataset.sector));
+    });
+
+    tab.addEventListener('keydown', (e) => {
+      const current = Number(tab.dataset.sector);
+      let next = current;
+
+      if (e.key === 'ArrowRight') {
+        next = (current + 1) % sectorTabs.length;
+      } else if (e.key === 'ArrowLeft') {
+        next = (current - 1 + sectorTabs.length) % sectorTabs.length;
+      } else if (e.key === 'Home') {
+        next = 0;
+      } else if (e.key === 'End') {
+        next = sectorTabs.length - 1;
+      } else {
+        return;
+      }
+
+      e.preventDefault();
+      sectorTabs[next].focus();
+      switchSector(next);
+    });
   });
 });
