@@ -315,62 +315,133 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => overlay.classList.add('active'));
   }
 
+  const EVENTS_DATA = [
+    {
+      id: 'quote-writing-event',
+      filename: 'quote-writing-event.evtx',
+      type: 'Writing Event',
+      dateLabel: 'DUE JUL 20, 2026',
+      title: 'Quote Writing Event: A Secret Worth Writing',
+      description: 'Submit a single, impactful quote based on the theme <strong>A secret worth writing</strong>. Keep it concise (1–2 sentences). It can be profound, poetic, cryptic, or philosophical — just make sure it is entirely your own original thought. Provide a short note on why and how you decided on it.',
+      guidelines: [
+        '1–2 sentences max',
+        'Profound, poetic, cryptic, or philosophical',
+        'Must be your own original thought',
+        'Include a brief description of your process',
+        'Submission deadline: July 20, 2026'
+      ],
+      why: 'Selected quotes will be archived and featured directly inside our website for everyone to see.',
+      submitTo: "Drop your submissions below through Inklings Bot's DMs.",
+      example: 'The things we refuse to say out loud are usually the ones that shape us the most.'
+    }
+  ];
+
+  function renderEventWindow(ev) {
+    const guidelinesHtml = ev.guidelines
+      ? `<ul class="event-window-list">${ev.guidelines.map((g) => `<li>${g}</li>`).join('')}</ul>`
+      : '';
+    const whyHtml = ev.why ? `<p class="event-window-note"><strong>Why participate?</strong> ${ev.why}</p>` : '';
+    const submitHtml = ev.submitTo ? `<p class="event-window-note"><strong>How to submit:</strong> ${ev.submitTo}</p>` : '';
+    const exampleHtml = ev.example
+      ? `<div class="event-window-example">
+           <span class="event-window-example-label">Example quote:</span>
+           <blockquote>"${ev.example}"</blockquote>
+         </div>`
+      : '';
+
+    return `
+      <div class="event-window" role="article" aria-labelledby="event-title-${ev.id}">
+        <div class="event-window-titlebar">
+          <div class="event-window-dots"><span></span><span></span><span></span></div>
+          <span class="event-window-title">${ev.filename}</span>
+          <div class="event-window-winbtns" aria-hidden="true">
+            <span>_</span><span>□</span><span>×</span>
+          </div>
+        </div>
+        <div class="event-window-menu">
+          <span>File</span><span>Edit</span><span>View</span><span>Help</span>
+        </div>
+        <div class="event-window-body">
+          <div class="event-window-meta">
+            <span>${ev.type}</span>
+            <span>${ev.dateLabel}</span>
+          </div>
+          <h3 class="event-window-heading" id="event-title-${ev.id}">${ev.title}</h3>
+          <p class="event-window-desc">${ev.description}</p>
+          ${guidelinesHtml}
+          ${whyHtml}
+          ${submitHtml}
+          ${exampleHtml}
+        </div>
+        <div class="event-window-statusbar">
+          <span>1 object(s)</span>
+          <span>Status: OPEN</span>
+          <span>UTF-8</span>
+        </div>
+      </div>`;
+  }
+
   function initFileCabinet() {
     const container = document.getElementById('eventsTimeline');
     if (!container) return;
 
-    container.innerHTML = `
-      <div class="file-error-dialog" role="alert" aria-live="polite">
-        <div class="file-error-titlebar">
-          <div class="file-error-dots"><span></span><span></span><span></span></div>
-          <span class="file-error-title">events.exe — System Error</span>
-          <div class="file-error-winbtns" aria-hidden="true">
-            <span>_</span><span>□</span><span>×</span>
-          </div>
-        </div>
-        <div class="file-error-body">
-          <div class="file-error-icon-box">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="file-error-content">
-            <p class="file-error-code">ERROR 0x4E4F4556: EVENTS_NOT_FOUND</p>
-            <h3 class="file-error-heading">Whoops, no events yet!</h3>
-            <p class="file-error-desc">Check back soon &mdash; we&rsquo;re putting together our next creative gathering.</p>
-            <div class="file-error-actions">
-              <button class="file-error-ok" type="button">OK</button>
-              <button class="file-error-ok file-error-secondary" type="button">Why the hell not??</button>
+    if (EVENTS_DATA.length === 0) {
+      container.innerHTML = `
+        <div class="file-error-dialog" role="alert" aria-live="polite">
+          <div class="file-error-titlebar">
+            <div class="file-error-dots"><span></span><span></span><span></span></div>
+            <span class="file-error-title">events.exe — System Error</span>
+            <div class="file-error-winbtns" aria-hidden="true">
+              <span>_</span><span>□</span><span>×</span>
             </div>
           </div>
-        </div>
-        <div class="file-error-terminal">
-          <pre><span class="file-error-prompt">C:\INKLINGS&gt;</span>dir /events
+          <div class="file-error-body">
+            <div class="file-error-icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="file-error-content">
+              <p class="file-error-code">ERROR 0x4E4F4556: EVENTS_NOT_FOUND</p>
+              <h3 class="file-error-heading">Whoops, no events yet!</h3>
+              <p class="file-error-desc">Check back soon &mdash; we&rsquo;re putting together our next creative gathering.</p>
+              <div class="file-error-actions">
+                <button class="file-error-ok" type="button">OK</button>
+                <button class="file-error-ok file-error-secondary" type="button">Why the hell not??</button>
+              </div>
+            </div>
+          </div>
+          <div class="file-error-terminal">
+            <pre><span class="file-error-prompt">C:\INKLINGS&gt;</span>dir /events
 <span class="file-error-line">File Not Found</span>
 
 <span class="file-error-prompt">C:\INKLINGS&gt;</span><span class="file-error-cursor"></span></pre>
-        </div>
-      </div>`;
+          </div>
+        </div>`;
 
-    const okBtn = container.querySelector('.file-error-ok:not(.file-error-secondary)');
-    if (okBtn) {
-      okBtn.addEventListener('click', () => {
-        createModal(
-          'Nice try.',
-          'Did you really think clicking OK would fix anything? Events still don\'t exist. Chill for a bit.'
-        );
-      });
+      const okBtn = container.querySelector('.file-error-ok:not(.file-error-secondary)');
+      if (okBtn) {
+        okBtn.addEventListener('click', () => {
+          createModal(
+            'Nice try.',
+            'Did you really think clicking OK would fix anything? Events still don\'t exist. Chill for a bit.'
+          );
+        });
+      }
+
+      const whyBtn = container.querySelector('.file-error-secondary');
+      if (whyBtn) {
+        whyBtn.addEventListener('click', () => {
+          createModal(
+            'Patience, friend.',
+            'Look dude events take time to make so just wait K?'
+          );
+        });
+      }
+      return;
     }
 
-    const whyBtn = container.querySelector('.file-error-secondary');
-    if (whyBtn) {
-      whyBtn.addEventListener('click', () => {
-        createModal(
-          'Patience, friend.',
-          'Look dude events take time to make so just wait K?'
-        );
-      });
-    }
+    container.innerHTML = EVENTS_DATA.map(renderEventWindow).join('');
   }
 
   initFileCabinet();
