@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- UI Elements ---
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const colonyWelcome = document.getElementById('colonyWelcome');
-  const i18n = window.i18n;
+  const i18n = window.i18n || { t: (k) => k, setLang: () => {}, getLang: () => 'en', applyTranslations: () => {} };
   const t = i18n.t;
 
   // --- 1. Custom Interactive Cursor ---
@@ -148,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  // Default to dark mode; respect saved preference if user has toggled it
+  const savedTheme = localStorage.getItem('theme') || 'dark';
   setTheme(savedTheme);
 
   if (themeToggleBtn) {
