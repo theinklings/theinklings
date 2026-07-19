@@ -246,33 +246,39 @@
 
         <!-- Manifesto / About Section -->
         <section class="reveal" id="about">
-                <div class="container manifesto-window">
-                        <div class="manifesto-titlebar">
-                                <div class="manifesto-titlebar-dots"><span></span><span></span><span></span></div>
-                                <span class="manifesto-titlebar-title">manifesto.txt — Notepad</span>
-                                <div class="manifesto-titlebar-btns" aria-hidden="true">
-                                        <span>_</span><span>□</span><span>×</span>
+                <div class="container manifesto-outer">
+                        <div class="manifesto-window">
+                                <div class="manifesto-titlebar">
+                                        <div class="manifesto-titlebar-dots"><span></span><span></span><span></span></div>
+                                        <span class="manifesto-titlebar-title">manifesto.txt — Notepad</span>
+                                        <div class="manifesto-titlebar-btns" aria-hidden="true">
+                                                <span>_</span><span>□</span><span>×</span>
+                                        </div>
+                                </div>
+                                <div class="manifesto-menu">
+                                        <span>File</span>
+                                        <span>Edit</span>
+                                        <span>Search</span>
+                                        <span>Help</span>
+                                </div>
+                                <div class="manifesto-body">
+                                        <div class="manifesto-header">
+                                                <span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
+                                                <h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
+                                        </div>
+                                        <p data-i18n-html="aboutP1Html"><strong>The Inklings</strong> is designed to be an organized, compact, and relaxed community of creators who are dedicated to helping others imagine, build, and grow.</p>
+                                        <p data-i18n="aboutP2">Whether you are working on a massive project, launching a creative hobby or just want to share advice, we're here to hit the grind and create meaningful works, as well as helping you host your own creative events.</p>
+                                        <p data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit alongside people who care about their craft.</p>
+                                </div>
+                                <div class="manifesto-statusbar">
+                                        <span>Ln 1, Col 1</span>
+                                        <span>100% UTF-8</span>
+                                        <span>Windows (CRLF)</span>
                                 </div>
                         </div>
-                        <div class="manifesto-menu">
-                                <span>File</span>
-                                <span>Edit</span>
-                                <span>Search</span>
-                                <span>Help</span>
-                        </div>
-                        <div class="manifesto-body">
-                                <div class="manifesto-header">
-                                        <span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
-                                        <h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
-                                </div>
-                                <p data-i18n-html="aboutP1Html"><strong>The Inklings</strong> is designed to be an organized, compact, and relaxed community of creators who are dedicated to helping others imagine, build, and grow.</p>
-                                <p data-i18n="aboutP2">Whether you are working on a massive project, launching a creative hobby or just want to share advice, we're here to hit the grind and create meaningful works, as well as helping you host your own creative events.</p>
-                                <p data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit alongside people who care about their craft.</p>
-                        </div>
-                        <div class="manifesto-statusbar">
-                                <span>Ln 1, Col 1</span>
-                                <span>100% UTF-8</span>
-                                <span>Windows (CRLF)</span>
+                        <!-- Inklogloomy peeking beside the manifesto -->
+                        <div class="manifesto-char" aria-hidden="true">
+                                <img src="images/Inklogloomy.svg" alt="" class="inklo-char inklo-char--medium" loading="lazy" />
                         </div>
                 </div>
         </section>
@@ -281,9 +287,15 @@
         <section class="reveal" id="pillars">
                 <div class="container">
                         <div class="pillars-header">
-                                <h2 data-i18n="pillarsHeading">Community Pillars</h2>
-                                <p data-i18n="pillarsSubheading">Three core activities that define what we do every
-                                        single day as a community.</p>
+                                <div class="pillars-header-text">
+                                        <h2 data-i18n="pillarsHeading">Community Pillars</h2>
+                                        <p data-i18n="pillarsSubheading">Three core activities that define what we do every
+                                                single day as a community.</p>
+                                </div>
+                                <!-- Inkloskeptical watching the pillars -->
+                                <div class="pillars-header-char" aria-hidden="true">
+                                        <img src="images/Inkloskeptical.svg" alt="" class="inklo-char inklo-char--medium" loading="lazy" />
+                                </div>
                         </div>
                         <div class="pillars-grid">
                                 <!-- Pillar 1: Imagine -->
@@ -369,6 +381,10 @@
                                 <h2 data-i18n="eventsHeading">Creative Events</h2>
                                 <p data-i18n="eventsLead">The latest news from across The Inklings, plus a first look
                                         at the creative events we have coming up.</p>
+                                <!-- Inkloexcited cheering below the intro -->
+                                <div class="events-char-wrap" aria-hidden="true">
+                                        <img src="images/Inkloexcited.svg" alt="" class="inklo-char inklo-char--small" loading="lazy" />
+                                </div>
                         </div>
                         <!-- Events File Cabinet — rendered by app.js -->
                         <div class="events-timeline" id="eventsTimeline"></div>
@@ -578,16 +594,22 @@
 
         <!-- Join the Discord Section -->
         <section class="reveal" id="join">
-                <div class="container join-container">
-                        <h2 data-i18n="joinHeading">Join the Discord</h2>
-                        <p data-i18n="joinLead">We keep the circle compact and focused to ensure high-quality feedback
-                                and real human connections. Scan the QR code or click below to join us on Discord.</p>
-                        <div class="discord-qr-center">
-                                <img alt="Discord QR Code" class="discord-qr" id="discordQr"
-                                        src="images/invite_discord_white.png" />
-                                <a class="btn btn-primary discord-direct-btn" href="https://discord.gg/NZXU7g8bXU"
-                                        rel="noopener noreferrer" target="_blank" data-i18n="joinDiscordBtn">Join
-                                        Discord</a>
+                <div class="container join-inner">
+                        <div class="join-text">
+                                <h2 data-i18n="joinHeading">Join the Discord</h2>
+                                <p data-i18n="joinLead">We keep the circle compact and focused to ensure high-quality feedback
+                                        and real human connections. Scan the QR code or click below to join us on Discord.</p>
+                                <div class="discord-qr-center">
+                                        <img alt="Discord QR Code" class="discord-qr" id="discordQr"
+                                                src="images/invite_discord_white.png" />
+                                        <a class="btn btn-primary discord-direct-btn" href="https://discord.gg/NZXU7g8bXU"
+                                                rel="noopener noreferrer" target="_blank" data-i18n="joinDiscordBtn">Join
+                                                Discord</a>
+                                </div>
+                        </div>
+                        <!-- Inklohappy waving -->
+                        <div class="join-char" aria-hidden="true">
+                                <img src="images/Inklohappy.svg" alt="" class="inklo-char inklo-char--large" loading="lazy" />
                         </div>
                 </div>
         </section>
@@ -595,17 +617,16 @@
         <!-- Footer -->
         <footer>
                 <div class="container footer-content">
-                        <div class="footer-logo">
-                                <!-- SVG Nib & Droplet Logo -->
-                                <svg class="logo-svg" fill="none" viewbox="0 0 329 329"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M89.0312 216.784L50.0156 294.818H128.049L145.14 329H0L72.5693 183.861L89.0312 216.784ZM181.59 294.818L164.499 329L147.408 294.818H181.59ZM329 329H183.858L200.949 294.818H278.987L239.968 216.781L256.43 183.858L329 329ZM115.173 164.5L98.7109 197.424L82.249 164.501L98.7109 131.577L115.173 164.5ZM246.749 164.498L230.288 197.421L213.826 164.498L230.287 131.574L246.749 164.498ZM190.249 51.4961L220.608 112.216L204.147 145.141L164.499 65.8457L124.854 145.136L108.393 112.214L138.753 51.4961H190.249ZM181.591 34.1807H147.41L164.501 0L181.591 34.1807Z"
-                                                fill="currentColor"></path>
-                                        <path d="M0.000153734 4.76837e-06L329 4.76837e-06L164.499 329L0.000153734 4.76837e-06ZM278.985 34.1818L50.0132 34.1818L164.501 263.154L278.985 34.1818Z"
-                                                fill="currentColor"></path>
-                                </svg>
+                        <a class="footer-logo" href="#">
+                                <!-- Use the actual logo image file -->
+                                <img
+                                        src="images/Theinklingslogonew.svg"
+                                        alt="The Inklings"
+                                        class="footer-logo-img"
+                                        aria-hidden="true"
+                                />
                                 <span data-i18n="logoText">The Inklings</span>
-                        </div>
+                        </a>
                         <div class="footer-links">
                                 <span data-i18n="footerCopyright">© 2026 The Inklings. All creative rights
                                         reserved.</span>
