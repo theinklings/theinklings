@@ -244,41 +244,118 @@
                 </div>
         </section>
 
-        <!-- Manifesto / About Section -->
+        <!-- About / Manifesto Section — bold graphic layout -->
         <section class="reveal" id="about">
-                <div class="container manifesto-outer">
-                        <div class="manifesto-window">
-                                <div class="manifesto-titlebar">
-                                        <div class="manifesto-titlebar-dots"><span></span><span></span><span></span></div>
-                                        <span class="manifesto-titlebar-title">manifesto.txt — Notepad</span>
-                                        <div class="manifesto-titlebar-btns" aria-hidden="true">
-                                                <span>_</span><span>□</span><span>×</span>
-                                        </div>
-                                </div>
-                                <div class="manifesto-menu">
-                                        <span>File</span>
-                                        <span>Edit</span>
-                                        <span>Search</span>
-                                        <span>Help</span>
-                                </div>
-                                <div class="manifesto-body">
-                                        <div class="manifesto-header">
-                                                <span class="subtitle" data-i18n="aboutLabel">Our Purpose</span>
-                                                <h2 data-i18n="aboutHeading">To make cool stuff together.</h2>
-                                        </div>
-                                        <p data-i18n-html="aboutP1Html"><strong>The Inklings</strong> is designed to be an organized, compact, and relaxed community of creators who are dedicated to helping others imagine, build, and grow.</p>
-                                        <p data-i18n="aboutP2">Whether you are working on a massive project, launching a creative hobby or just want to share advice, we're here to hit the grind and create meaningful works, as well as helping you host your own creative events.</p>
-                                        <p data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit alongside people who care about their craft.</p>
-                                </div>
-                                <div class="manifesto-statusbar">
-                                        <span>Ln 1, Col 1</span>
-                                        <span>100% UTF-8</span>
-                                        <span>Windows (CRLF)</span>
-                                </div>
+                <div class="about-inner">
+
+                        <!-- Left: text content -->
+                        <div class="about-content">
+                                <span class="about-label" data-i18n="aboutLabel">Our Purpose</span>
+                                <h2 class="about-heading" data-i18n="aboutHeading">To make cool stuff together.</h2>
+                                <p class="about-p" data-i18n-html="aboutP1Html"><strong>The Inklings</strong> is designed to be an organized, compact, and relaxed community of creators who are dedicated to helping others imagine, build, and grow.</p>
+                                <p class="about-p" data-i18n="aboutP2">Whether you are working on a massive project, launching a creative hobby or just want to share advice, we're here to hit the grind and create meaningful works, as well as helping you host your own creative events.</p>
+                                <p class="about-p" data-i18n="aboutP3">No fluff, no pressure. Just pure, unadulterated creative pursuit alongside people who care about their craft.</p>
+                                <a class="btn about-cta join-redirect" href="#join">Join the Inklings →</a>
                         </div>
-                        <!-- Inklogloomy peeking beside the manifesto -->
-                        <div class="manifesto-char" aria-hidden="true">
-                                <img src="images/Inklogloomy.svg" alt="" class="inklo-char inklo-char--medium" loading="lazy" />
+
+                        <!-- Right: floating abstract shapes + Inklogloomy -->
+                        <div class="about-shapes" aria-hidden="true">
+
+                                <!-- Orange organic blob -->
+                                <svg class="ab-shape ab-blob-orange" viewBox="0 0 220 170" fill="none">
+                                        <path d="M40,85 Q28,18 90,8 Q152,-2 185,38 Q220,78 182,128 Q144,178 84,166 Q24,154 40,85Z" fill="#FF6B35"/>
+                                </svg>
+
+                                <!-- Yellow rounded bar -->
+                                <svg class="ab-shape ab-blob-yellow" viewBox="0 0 200 90" fill="none">
+                                        <rect x="4" y="4" width="192" height="82" rx="41" fill="#F5E642"/>
+                                </svg>
+
+                                <!-- White outline arc -->
+                                <svg class="ab-shape ab-arc" viewBox="0 0 180 180" fill="none">
+                                        <path d="M 170 160 Q 10 160 10 10" stroke="white" stroke-width="2.5" fill="none" opacity="0.35"/>
+                                </svg>
+
+                                <!-- Cyan zigzag -->
+                                <svg class="ab-shape ab-zigzag" viewBox="0 0 44 220" fill="none">
+                                        <polyline points="38,0 6,28 38,56 6,84 38,112 6,140 38,168 6,196 38,220"
+                                                stroke="#00D9C4" stroke-width="7" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                                <!-- Pink staircase -->
+                                <svg class="ab-shape ab-stairs" viewBox="0 0 150 130" fill="none">
+                                        <path d="M0,130 L0,86 L48,86 L48,43 L96,43 L96,0 L150,0 L150,44 L98,44 L98,87 L50,87 L50,130Z" fill="#FF4DA6"/>
+                                </svg>
+
+                                <!-- Dot grid -->
+                                <svg class="ab-shape ab-dots" viewBox="0 0 100 120" fill="none">
+                                        <circle cx="10" cy="10" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="30" cy="10" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="50" cy="10" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="70" cy="10" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="90" cy="10" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="10" cy="30" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="30" cy="30" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="50" cy="30" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="70" cy="30" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="90" cy="30" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="10" cy="50" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="30" cy="50" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="50" cy="50" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="70" cy="50" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="90" cy="50" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="10" cy="70" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="30" cy="70" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="50" cy="70" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="70" cy="70" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="90" cy="70" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="10" cy="90" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="30" cy="90" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="50" cy="90" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="70" cy="90" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="90" cy="90" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="10" cy="110" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="30" cy="110" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="50" cy="110" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="70" cy="110" r="3" fill="white" opacity="0.45"/>
+                                        <circle cx="90" cy="110" r="3" fill="white" opacity="0.45"/>
+                                </svg>
+
+                                <!-- Pink asterisks -->
+                                <svg class="ab-shape ab-stars" viewBox="0 0 60 160" fill="none">
+                                        <path d="M30,4 L32,18 L44,10 L36,22 L50,24 L38,30 L50,36 L36,38 L44,50 L32,42 L30,56 L28,42 L16,50 L24,38 L10,36 L22,30 L10,24 L24,22 L16,10 L28,18Z" fill="#FF4DA6"/>
+                                        <path d="M30,64 L32,78 L44,70 L36,82 L50,84 L38,90 L50,96 L36,98 L44,110 L32,102 L30,116 L28,102 L16,110 L24,98 L10,96 L22,90 L10,84 L24,82 L16,70 L28,78Z" fill="#FF4DA6"/>
+                                        <path d="M30,124 L32,138 L44,130 L36,142 L50,144 L38,150 L50,156 L36,158 L44,170 L32,162 L30,176 L28,162 L16,170 L24,158 L10,156 L22,150 L10,144 L24,142 L16,130 L28,138Z" fill="#FF4DA6"/>
+                                </svg>
+
+                                <!-- Green blob -->
+                                <svg class="ab-shape ab-blob-green" viewBox="0 0 120 160" fill="none">
+                                        <path d="M60,8 Q108,8 112,60 Q116,112 60,152 Q4,112 8,60 Q12,8 60,8Z" fill="#00E676"/>
+                                        <!-- Darker right half -->
+                                        <path d="M60,8 Q108,8 112,60 Q116,112 60,152 Z" fill="#00C853" opacity="0.5"/>
+                                </svg>
+
+                                <!-- White grid outline box -->
+                                <svg class="ab-shape ab-grid" viewBox="0 0 100 100" fill="none">
+                                        <rect x="1" y="1" width="98" height="98" stroke="white" stroke-width="1.5" opacity="0.3"/>
+                                        <line x1="25" y1="1" x2="25" y2="99" stroke="white" stroke-width="1" opacity="0.2"/>
+                                        <line x1="50" y1="1" x2="50" y2="99" stroke="white" stroke-width="1" opacity="0.2"/>
+                                        <line x1="75" y1="1" x2="75" y2="99" stroke="white" stroke-width="1" opacity="0.2"/>
+                                        <line x1="1" y1="25" x2="99" y2="25" stroke="white" stroke-width="1" opacity="0.2"/>
+                                        <line x1="1" y1="50" x2="99" y2="50" stroke="white" stroke-width="1" opacity="0.2"/>
+                                        <line x1="1" y1="75" x2="99" y2="75" stroke="white" stroke-width="1" opacity="0.2"/>
+                                </svg>
+
+                                <!-- Blue squiggle wave -->
+                                <svg class="ab-shape ab-wave" viewBox="0 0 220 40" fill="none">
+                                        <path d="M0,20 Q28,2 55,20 Q82,38 110,20 Q138,2 165,20 Q192,38 220,20"
+                                                stroke="#1462FF" stroke-width="4" fill="none"
+                                                stroke-linecap="round"/>
+                                </svg>
+
+                                <!-- Inklogloomy character -->
+                                <img src="images/Inklogloomy.svg" alt="" class="ab-shape ab-inklo" loading="lazy" />
                         </div>
                 </div>
         </section>
