@@ -8,7 +8,7 @@
         <meta content="The Inklings - A welcoming space where your creativity can run wild. We imagine, build, and grow together."
                 name="description" />
         <title data-i18n="pageTitle" data-i18n-title="pageTitle">The Inklings | Creative Collective</title>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
         <link href="style.css" rel="stylesheet" />
         <!-- Apply saved theme immediately to prevent flash of wrong theme -->
         <script>
@@ -86,14 +86,146 @@
                                 </svg>
                         </button>
         </header>
+
+        <!-- Marquee Ticker Belt -->
+        <div class="marquee-belt" aria-hidden="true">
+                <div class="marquee-track">
+                        <span>IMAGINE <span class="marquee-sep">★</span></span>
+                        <span>BUILD <span class="marquee-sep">★</span></span>
+                        <span>GROW <span class="marquee-sep">★</span></span>
+                        <span>CREATE <span class="marquee-sep">★</span></span>
+                        <span>COLLABORATE <span class="marquee-sep">★</span></span>
+                        <span>SHIP IT <span class="marquee-sep">★</span></span>
+                        <span>DREAM BIG <span class="marquee-sep">★</span></span>
+                        <span>MAKE COOL STUFF <span class="marquee-sep">★</span></span>
+                        <!-- Duplicate for seamless loop -->
+                        <span>IMAGINE <span class="marquee-sep">★</span></span>
+                        <span>BUILD <span class="marquee-sep">★</span></span>
+                        <span>GROW <span class="marquee-sep">★</span></span>
+                        <span>CREATE <span class="marquee-sep">★</span></span>
+                        <span>COLLABORATE <span class="marquee-sep">★</span></span>
+                        <span>SHIP IT <span class="marquee-sep">★</span></span>
+                        <span>DREAM BIG <span class="marquee-sep">★</span></span>
+                        <span>MAKE COOL STUFF <span class="marquee-sep">★</span></span>
+                </div>
+        </div>
+
         <!-- Hero Section -->
         <section class="hero" id="hero">
-                <div class="hero-grid-bg"></div>
 
+                <!-- Left: Animated Tile Grid -->
+                <div class="hero-tiles" aria-hidden="true">
+                        <!-- Row 1 -->
+                        <div class="hero-tile hero-tile--cyan">
+                                <!-- Spark / star shape -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <path d="M50 10 L54 46 L90 50 L54 54 L50 90 L46 54 L10 50 L46 46 Z" fill="#111" />
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--yellow">
+                                <!-- Smiley balloon circle -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <circle cx="50" cy="46" r="34" fill="#FF4DA6" stroke="#111" stroke-width="4"/>
+                                        <circle cx="38" cy="40" r="4" fill="#111"/>
+                                        <circle cx="62" cy="40" r="4" fill="#111"/>
+                                        <path d="M36 56 Q50 68 64 56" stroke="#111" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                        <line x1="50" y1="80" x2="50" y2="95" stroke="#111" stroke-width="3"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--pink">
+                                <!-- Heart -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <path d="M50 80 C50 80 15 58 15 35 C15 22 25 15 35 15 C42 15 48 19 50 23 C52 19 58 15 65 15 C75 15 85 22 85 35 C85 58 50 80 50 80Z" fill="#F5E642" stroke="#111" stroke-width="4"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--checker">
+                                <!-- Burst / spiky star -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <path d="M50 5 L55 38 L82 20 L65 45 L95 50 L65 55 L82 80 L55 62 L50 95 L45 62 L18 80 L35 55 L5 50 L35 45 L18 20 L45 38 Z" fill="#111"/>
+                                </svg>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="hero-tile hero-tile--black">
+                                <!-- Flower / rounded square bloom -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <circle cx="50" cy="30" r="15" fill="#00D9C4"/>
+                                        <circle cx="70" cy="50" r="15" fill="#00D9C4"/>
+                                        <circle cx="50" cy="70" r="15" fill="#00D9C4"/>
+                                        <circle cx="30" cy="50" r="15" fill="#00D9C4"/>
+                                        <circle cx="50" cy="50" r="16" fill="#00D9C4" stroke="#111" stroke-width="3"/>
+                                        <!-- checker center -->
+                                        <circle cx="50" cy="50" r="10" fill="#111"/>
+                                        <circle cx="50" cy="50" r="5" fill="#00D9C4"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--cyan">
+                                <!-- Concentric rings -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <circle cx="50" cy="50" r="42" stroke="#111" stroke-width="3"/>
+                                        <circle cx="50" cy="50" r="34" stroke="#111" stroke-width="3"/>
+                                        <circle cx="50" cy="50" r="26" stroke="#111" stroke-width="3"/>
+                                        <circle cx="50" cy="50" r="18" stroke="#111" stroke-width="3"/>
+                                        <circle cx="50" cy="50" r="10" stroke="#111" stroke-width="3"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--yellow">
+                                <!-- Heart yellow -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <path d="M50 80 C50 80 15 58 15 35 C15 22 25 15 35 15 C42 15 48 19 50 23 C52 19 58 15 65 15 C75 15 85 22 85 35 C85 58 50 80 50 80Z" fill="#111" stroke="#111" stroke-width="2"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--pink">
+                                <!-- Spark big -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <path d="M50 5 L55 38 L82 20 L65 45 L95 50 L65 55 L82 80 L55 62 L50 95 L45 62 L18 80 L35 55 L5 50 L35 45 L18 20 L45 38 Z" fill="#F5E642" stroke="#111" stroke-width="2"/>
+                                </svg>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="hero-tile hero-tile--blue">
+                                <!-- Flower blue -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <circle cx="50" cy="30" r="15" fill="#F8F8F2"/>
+                                        <circle cx="70" cy="50" r="15" fill="#F8F8F2"/>
+                                        <circle cx="50" cy="70" r="15" fill="#F8F8F2"/>
+                                        <circle cx="30" cy="50" r="15" fill="#F8F8F2"/>
+                                        <circle cx="50" cy="50" r="16" fill="#F8F8F2" stroke="#111" stroke-width="3"/>
+                                        <circle cx="50" cy="50" r="10" fill="#111"/>
+                                        <circle cx="50" cy="50" r="5" fill="#F8F8F2"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--yellow">
+                                <!-- Concentric cyan -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <circle cx="50" cy="50" r="42" stroke="#111" stroke-width="4" stroke-dasharray="8 5"/>
+                                        <circle cx="50" cy="50" r="28" stroke="#111" stroke-width="4" stroke-dasharray="8 5"/>
+                                        <circle cx="50" cy="50" r="14" stroke="#111" stroke-width="4"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--checker">
+                                <!-- Balloon pink -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <circle cx="50" cy="44" r="32" fill="#FF4DA6" stroke="#111" stroke-width="4"/>
+                                        <line x1="50" y1="76" x2="50" y2="95" stroke="#111" stroke-width="3"/>
+                                </svg>
+                        </div>
+                        <div class="hero-tile hero-tile--cyan">
+                                <!-- Burst outline -->
+                                <svg viewBox="0 0 100 100" fill="none">
+                                        <path d="M50 10 L54 46 L90 50 L54 54 L50 90 L46 54 L10 50 L46 46 Z" fill="#111"/>
+                                        <path d="M50 20 L53 46 L80 50 L53 54 L50 80 L47 54 L20 50 L47 46 Z" fill="#00D9C4"/>
+                                </svg>
+                        </div>
+                </div>
+
+                <!-- Right: Hero Content -->
                 <div class="hero-content">
                         <span class="hero-tag" data-i18n="heroTag">A Creative Collective</span>
-                        <h1><span data-i18n="heroTitleStart">Where we </span><span class="hero-typing"
-                                        id="heroTyping">imagine</span>.</h1>
+                        <h1><span data-i18n="heroTitleStart">Where we </span></h1>
+                        <div class="hero-typing-wrapper">
+                                <span class="hero-typing" id="heroTyping">imagine</span><span class="hero-typing-label">.</span>
+                        </div>
                         <p class="lead" data-i18n="heroLead">We are a welcoming space where your creativity can truly
                                 run wild. Organized, compact, and
                                 relaxed.</p>
@@ -101,15 +233,17 @@
                                 <a class="btn btn-primary" data-i18n="heroCtaManifesto" href="#about">Read Manifesto</a>
                                 <a class="btn btn-secondary" data-i18n="heroCtaEvents" href="#events">Explore Events</a>
                         </div>
-                </div>
-                <div class="scroll-down">
-                        <a aria-label="Scroll down" data-i18n-aria="scrollDownAria" href="#about">
-                                <svg viewbox="0 0 24 24">
-                                        <path d="M12 5v14M5 12l7 7 7-7"></path>
-                                </svg>
-                        </a>
+
+                        <div class="scroll-down">
+                                <a aria-label="Scroll down" data-i18n-aria="scrollDownAria" href="#about">
+                                        <svg viewbox="0 0 24 24">
+                                                <path d="M12 5v14M5 12l7 7 7-7"></path>
+                                        </svg>
+                                </a>
+                        </div>
                 </div>
         </section>
+
         <!-- Manifesto / About Section -->
         <section class="reveal" id="about">
                 <div class="container manifesto-window">
@@ -142,6 +276,7 @@
                         </div>
                 </div>
         </section>
+
         <!-- Pillars Section -->
         <section class="reveal" id="pillars">
                 <div class="container">
@@ -224,6 +359,7 @@
                         </div>
                 </div>
         </section>
+
         <!-- Events Section -->
         <section class="reveal" id="events">
                 <div class="container events-layout">
@@ -238,6 +374,7 @@
                         <div class="events-timeline" id="eventsTimeline"></div>
                 </div>
         </section>
+
         <!-- Inkling Sectors -->
         <section class="reveal" id="colonies" data-gated="true">
                 <div class="container colonies-container">
@@ -438,6 +575,7 @@
                         <p aria-live="polite" class="colony-welcome" id="colonyWelcome"></p>
                 </div>
         </section>
+
         <!-- Join the Discord Section -->
         <section class="reveal" id="join">
                 <div class="container join-container">
@@ -453,6 +591,7 @@
                         </div>
                 </div>
         </section>
+
         <!-- Footer -->
         <footer>
                 <div class="container footer-content">
@@ -479,6 +618,18 @@
                         </div>
                 </div>
         </footer>
+
+        <!-- Tile entrance animation script -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var tiles = document.querySelectorAll('.hero-tile');
+            tiles.forEach(function(tile, i) {
+              setTimeout(function() {
+                tile.classList.add('tile-in');
+              }, 80 + i * 60);
+            });
+          });
+        </script>
 </body>
 
 </html>
