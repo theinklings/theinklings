@@ -316,26 +316,66 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => overlay.classList.add('active'));
   }
 
-  const EVENTS_DATA = [
+  const EVENTS_DATA = [];
+
+  // ─────────────────────────────────────────────────────────────────────
+  // WINNERS — event winners showcase data
+  // ─────────────────────────────────────────────────────────────────────
+  const WINNERS_DATA = [
     {
-      id: 'quote-writing-event',
-      filename: 'quote-writing-event.evtx',
-      type: 'Writing Event',
-      dateLabel: 'DUE JUL 20, 2026',
-      title: 'Quote Writing Event: A Secret Worth Writing',
-      description: 'Submit a single, impactful quote based on the theme <strong>A secret worth writing</strong>. Keep it concise (1–2 sentences). It can be profound, poetic, cryptic, or philosophical — just make sure it is entirely your own original thought. Provide a short note on why and how you decided on it.',
-      guidelines: [
-        '1–2 sentences max',
-        'Profound, poetic, cryptic, or philosophical',
-        'Must be your own original thought',
-        'Include a brief description of your process',
-        'Submission deadline: July 20, 2026'
-      ],
-      why: 'Selected quotes will be archived and featured directly inside our website for everyone to see.',
-      submitTo: "Drop your submissions below through Inklings Bot's DMs.",
-      example: 'The things we refuse to say out loud are usually the ones that shape us the most.'
+      id: 'quote-winner-1',
+      eventName: 'Quote Writing Event',
+      eventTheme: 'A Secret Worth Writing',
+      winner: 'jumpolphat',
+      quote: 'Cherish tomorrow\'s dawn with gratitude, and take pride in having outlasted yesterday\'s trials.',
+      description: 'Context of this is to be grateful for having a tomorrow and make it past yesterday. Even though life\'s hard sometimes. But it is normal as it should be. We\'ll never know what could happen in the future or rewrite the past. The thing that we can do is to make today\'s the best and be thankful for making it till today.'
     }
   ];
+
+  function renderWinnersBox() {
+    if (WINNERS_DATA.length === 0) return '';
+    const entriesHtml = WINNERS_DATA.map((w, i) => `
+      <div class="winner-entry${i > 0 ? ' winner-entry--divider' : ''}" aria-label="Winner: ${w.winner}">
+        <div class="winner-event-tag">
+          <span class="winner-event-name">${w.eventName}</span>
+          <span class="winner-event-theme">&ldquo;${w.eventTheme}&rdquo;</span>
+        </div>
+        <div class="winner-profile">
+          <div class="winner-trophy" aria-hidden="true">🏆</div>
+          <div class="winner-info">
+            <span class="winner-label">Winner</span>
+            <span class="winner-name">${w.winner}</span>
+          </div>
+        </div>
+        <blockquote class="winner-quote">&ldquo;${w.quote}&rdquo;</blockquote>
+        <p class="winner-desc">${w.description}</p>
+      </div>
+    `).join('');
+
+    return `
+      <div class="winner-window" role="article" aria-label="Event Winners">
+        <div class="winner-titlebar">
+          <div class="winner-dots"><span></span><span></span><span></span></div>
+          <span class="winner-title">event-winners.win</span>
+          <div class="winner-winbtns" aria-hidden="true"><span>_</span><span>□</span><span>×</span></div>
+        </div>
+        <div class="winner-menu">
+          <span>Archive</span><span>Share</span><span>View</span>
+        </div>
+        <div class="winner-body">
+          <div class="winner-header">
+            <span class="winner-header-label">✦ Hall of Fame ✦</span>
+            <h3 class="winner-header-heading">Event Winners</h3>
+          </div>
+          ${entriesHtml}
+        </div>
+        <div class="winner-statusbar">
+          <span>${WINNERS_DATA.length} winner(s)</span>
+          <span>Status: ARCHIVED</span>
+          <span>UTF-8</span>
+        </div>
+      </div>`;
+  }
 
   function renderEventWindow(ev) {
     const guidelinesHtml = ev.guidelines
@@ -386,9 +426,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('eventsTimeline');
     if (!container) return;
 
-    if (EVENTS_DATA.length === 0) {
-      container.innerHTML = `
-        <div class="file-error-dialog" role="alert" aria-live="polite">
+    const eventsHtml = EVENTS_DATA.length === 0
+      ? `<div class="file-error-dialog" role="alert" aria-live="polite">
           <div class="file-error-titlebar">
             <div class="file-error-dots"><span></span><span></span><span></span></div>
             <span class="file-error-title">events.exe — System Error</span>
@@ -413,36 +452,35 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
           <div class="file-error-terminal">
-            <pre><span class="file-error-prompt">C:\INKLINGS&gt;</span>dir /events
-<span class="file-error-line">File Not Found</span>
-
-<span class="file-error-prompt">C:\INKLINGS&gt;</span><span class="file-error-cursor"></span></pre>
+            <pre><span class="file-error-prompt">C:\\INKLINGS&gt;</span>dir /events\n<span class="file-error-line">File Not Found</span>\n\n<span class="file-error-prompt">C:\\INKLINGS&gt;</span><span class="file-error-cursor"></span></pre>
           </div>
-        </div>`;
+        </div>`
+      : EVENTS_DATA.map(renderEventWindow).join('');
 
-      const okBtn = container.querySelector('.file-error-ok:not(.file-error-secondary)');
-      if (okBtn) {
-        okBtn.addEventListener('click', () => {
-          createModal(
-            'Nice try.',
-            'Did you really think clicking OK would fix anything? Events still don\'t exist. Chill for a bit.'
-          );
-        });
-      }
+    const winnersHtml = renderWinnersBox();
 
-      const whyBtn = container.querySelector('.file-error-secondary');
-      if (whyBtn) {
-        whyBtn.addEventListener('click', () => {
-          createModal(
-            'Patience, friend.',
-            'Look dude events take time to make so just wait K?'
-          );
-        });
-      }
-      return;
+    // Render both boxes in a two-column dual-box wrapper
+    container.innerHTML = `<div class="events-dual">${eventsHtml}${winnersHtml}</div>`;
+
+    // Wire up buttons if in no-events state
+    const okBtn = container.querySelector('.file-error-ok:not(.file-error-secondary)');
+    if (okBtn) {
+      okBtn.addEventListener('click', () => {
+        createModal(
+          'Nice try.',
+          'Did you really think clicking OK would fix anything? Events still don\'t exist. Chill for a bit.'
+        );
+      });
     }
-
-    container.innerHTML = EVENTS_DATA.map(renderEventWindow).join('');
+    const whyBtn = container.querySelector('.file-error-secondary');
+    if (whyBtn) {
+      whyBtn.addEventListener('click', () => {
+        createModal(
+          'Patience, friend.',
+          'Look dude events take time to make so just wait K?'
+        );
+      });
+    }
   }
 
   initFileCabinet();
