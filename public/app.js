@@ -316,7 +316,27 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => overlay.classList.add('active'));
   }
 
-  const EVENTS_DATA = [];
+  const EVENTS_DATA = [
+    {
+      id: 'character-design-blueprint',
+      filename: 'blueprint-of-humanity.evtx',
+      type: 'Character Design Contest',
+      dateLabel: 'DUE AUG 14, 2026',
+      title: 'Character Design Contest: The Blueprint of Humanity!',
+      description: 'We want to challenge all Inklings to bring a unique character concept to life. Design an original character based on our dual constraints: <strong>Topic: Humanity</strong> and <strong>Main Color: Blue (any tone)</strong>.',
+      guidelines: [
+        'Submit a full Character Sheet — front view required (side &amp; back optional)',
+        'Include at least one extra action snippet/shot showing the character doing something',
+        'Design must visually reflect or challenge the concept of &ldquo;Humanity&rdquo;',
+        'Blue must be the dominant and main color in the palette',
+        'Must be entirely your own original creation',
+        'Provide a basic description: lore, personality &amp; how you integrated blue',
+        'Submission deadline: August 14, 2026 &mdash; strictly within 25 days!'
+      ],
+      why: 'Winning and highly creative designs will be archived and featured directly inside our website for everyone to see!',
+      submitTo: "Drop your submissions below through Inklings Bot&rsquo;s DMs."
+    }
+  ];
 
   // ─────────────────────────────────────────────────────────────────────
   // WINNERS — event winners showcase data
